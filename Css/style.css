@@ -1,4 +1,9 @@
-Header
+.mainSection{
+    background: url("../Images/background.jpg");
+    background-size: contain
+}
+
+/* Header */
 header{height: 100vh;}
 
 iframe{
@@ -46,7 +51,7 @@ header .carousel-inner .item .carousel-caption a{
     padding: 20px;
     font-weight: bold;
     color: #fff;
-    transform: scale(.7, 1);
+    transform: scale(.9, 1);
     transition: all 0.5s;
 }
 
@@ -55,19 +60,33 @@ header .carousel-inner .item .carousel-caption a:hover{
     transform: scale(1.2, 1);
 }
 
+header  .carousel-control .icon-prev, header .carousel-control{background-image: none !important}
+
 header  .carousel-control .icon-prev, header .carousel-control .icon-next{font-size: 50px;}
 
 @media screen and (max-width: 500px){
-    header .carousel-inner .item .carousel-caption p{font-size: 2em;}
-    header .carousel-inner .item .carousel-caption h2{font-size: 2em;}
+    header .carousel-inner .item .carousel-caption p{font-size: 1.5em;}
+    header .carousel-inner .item .carousel-caption h2{font-size: 1.5em;}
 }
 
-.mainSection{background: url("../Images/background.jpg")}
+.body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
 
 /* Main */
-main section{margin-top: 50px}
+main{
+    margin-top: 120px;
+    background-color: #fff;
+    padding: 7px 35px 0;
+    margin-right: 20px;
+}
 
-main section{display: flex;}
+main section{
+    display: flex;
+    margin-bottom: 50px;
+}
 
 main section .date{
     text-align: center;
@@ -93,7 +112,7 @@ main section img{
 
 main section img:hover{transform: scale(1.05)}
 
-main .bodySection h2{margin-left: 20px}
+main .bodySection h2{margin-left: 20px;}
 
 main .bodySection p:first-of-type{
     margin: 20px;
@@ -119,7 +138,7 @@ main .bodySection a{
     color: var(--dark-blue);
     border: 2px solid var(--dark-blue);
     padding: 10px 20px;
-    transform: scale(0.7, 1);
+    transform: scale(0.9, 1);
     transition: all 0.5s ease-in-out;
 }
 
@@ -128,4 +147,60 @@ main .bodySection a:hover{
     text-decoration: none;
     background-color: var(--blue);
     color: #fff;
+}
+
+@media screen and (max-width: 767px){
+    .body{flex-direction: column;}
+    main{width: 100%}
+    main section{flex-direction: column;}
+    main section .calender, main section .comment{
+        display: flex;
+        direction: rtl
+    }
+    main section .calender hr{display: none}
+    main section .date i{margin-left: 20px}
+    main section .calender p:not(:first-of-type){line-height: 2.7em}
+    main .bodySection p span{
+        display: block;
+        margin-bottom: 5px;
+    }    
+}
+
+/* Aside */
+aside{
+    margin-top: 120px;
+    width: 100%;
+}
+
+aside section{
+    background-color: #fff;
+    padding: 7px 35px 0;
+}
+
+aside h2{
+    text-align: center;
+    text-decoration: underline;
+    color: var(--dark-blue);
+}
+
+aside ul{padding: 20px 0;}
+
+aside ul li{
+    list-style: none;
+    text-align: center;
+}
+
+aside ul li a{color: #999;}
+
+aside ul hr{margin: 10px 0;}
+
+aside .recent ul li{
+    text-align: right;
+    direction: rtl;
+    margin-top: 20px;
+}
+
+aside ul li a:hover{
+    color: #000;
+    text-decoration: none;
 }

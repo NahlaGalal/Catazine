@@ -6,6 +6,3 @@ function resizeIframe(e){
         $(".carousel-control")[0].style.top = e.style.height;
     }
 }
-
-
-
