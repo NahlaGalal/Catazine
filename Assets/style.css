@@ -42,6 +42,7 @@
     padding-top: 15px;
     font-size: 1.3em;
     border-radius: 10px;
+    transition: 1s;
 }
 
 .navbar-default .nav li a:hover{
