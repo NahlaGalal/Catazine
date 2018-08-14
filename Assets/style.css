@@ -10,6 +10,10 @@
     --light-red: #D93A1f;
 }
 *{font-family: 'Cairo', sans-serif;}
+body{
+    background: url("../Images/background.jpg");
+    background-size: contain
+}
 
 /* Navbar */
 .navbar-default{
@@ -45,7 +49,7 @@
     transition: 1s;
 }
 
-.navbar-default .nav li a:hover{
+.navbar-default .nav li a:hover, .navbar-default .nav .active a:hover, .navbar-default .nav .active a{
     color: #fff;
     background-color: var(--red)
 }
@@ -70,6 +74,8 @@
 }
 
 /* Footer */
+footer{background-color: #fff}
+
 footer hr{border-top: 3px solid #ddd;}
 
 footer .social{
@@ -94,6 +100,8 @@ footer .social img{
 footer .copyright{float: left;}
 
 footer .copyright p{text-align: center}
+
+footer .copyright p:first-of-type{color: var(--dark-blue)}
 
 footer .copyright p span{color: var(--red)}
 

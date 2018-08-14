@@ -1,0 +1,115 @@
+/* Main */
+main{margin-top: 120px}
+
+main .container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 120px 20px;
+}
+
+@media screen and (max-width: 991px){
+    main .container{grid-template-columns: repeat(2, 1fr)}
+}
+@media screen and (max-width: 767px){
+    main .container{grid-template-columns: 1fr}
+}
+
+main .container::before{display: none;}
+
+main section{
+    background-color: #fff;
+    position: relative;
+}
+
+/* Member image */
+main section>img{
+    display: block;
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 200px;
+}
+
+main section>img:hover{
+    transform: skewX(-10deg) scale(1.1);
+    border: 2px solid var(--red);
+    transition: all 0.3s;
+}
+
+/* Member */
+main section h1{
+    margin-top: 120px;
+    text-align: center;
+    color: var(--dark-blue)
+}
+
+main section>p{
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--blue)
+}
+
+/* Member Info */
+main section .info{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px
+}
+
+main section .info p span{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Member articles */
+main section .dropdown>a{
+    display: block;
+    border: 2px double var(--dark-blue);
+    margin: 30px auto 40px auto;
+    width: max-content;
+    padding: 10px 20px;
+    transform: scale(0.9, 1);
+    transition: all 0.5s ease-in-out;
+    font-size: 1.2em;
+}
+
+main section .dropdown>a:hover, main section .dropdown>a:focus{text-decoration: none}
+
+main section .dropdown>a:hover{
+    transform: scale(1.2, 1);
+    text-decoration: none;
+    background-color: var(--blue);
+    color: #fff;
+}
+
+main section .dropdown .dropdown-menu{
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 300px;
+    text-align: center
+}
+
+main section .dropdown .dropdown-menu li a{font-size: 1.2em;}
+
+main section .dropdown .dropdown-menu li a:hover{
+    background-color: var(--red);
+    border-radius: 20px;
+    color: #fff;
+    transition: all 1s;
+}
+
+/* Member links */
+main section ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 30px
+}
+
+main section ul li{margin: auto 10px;}
+
+main section ul li img{width: 50px;}
