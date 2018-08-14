@@ -1,11 +1,9 @@
 /* Header */
-header{height: 100vh;}
-
 header .carousel-inner .item img{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin-top: 20px;
-    background: transparent;
+    /* background: transparent; */
     opacity: 0.7;
 }
 
@@ -54,9 +52,32 @@ header  .carousel-control .icon-prev, header .carousel-control{background-image:
 
 header  .carousel-control .icon-prev, header .carousel-control .icon-next{font-size: 50px;}
 
-@media screen and (max-width: 500px){
-    header .carousel-inner .item .carousel-caption p{font-size: 1.5em;}
-    header .carousel-inner .item .carousel-caption h2{font-size: 1.5em;}
+@media screen and (max-width: 600px){
+    header .carousel-inner .item .carousel-caption{
+        top: 20px;
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+    }
+    header .carousel-inner .item .carousel-caption p{font-size: 1em;}
+    header .carousel-inner .item .carousel-caption h2{
+        font-size: 1.5em;
+        margin: 5px auto
+    }
+    header .carousel-inner .item .carousel-caption a{padding: 5px;}
+}
+
+@media screen and (max-width: 450px){
+    header .carousel-inner .item .carousel-caption{
+        top: 10px;
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+        padding: 0;
+        justify-content: center
+    }
+    header .carousel-inner .item .carousel-caption h2{font-size: 1em;}
+    header .carousel-indicators{bottom: -10px}
 }
 
 .body{
@@ -67,7 +88,7 @@ header  .carousel-control .icon-prev, header .carousel-control .icon-next{font-s
 
 /* Main */
 main{
-    margin-top: 120px;
+    margin-top: 50px;
     background-color: #fff;
     padding: 7px 35px 0;
     margin-right: 20px;
@@ -158,7 +179,7 @@ main .bodySection a:hover{
 
 /* Aside */
 aside{
-    margin-top: 120px;
+    margin-top: 50px;
     width: 100%;
 }
 
