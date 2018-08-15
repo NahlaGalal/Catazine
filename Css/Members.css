@@ -19,6 +19,7 @@ main .container::before{display: none;}
 main section{
     background-color: #fff;
     position: relative;
+    border-radius: 20px;
 }
 
 /* Member image */
@@ -114,4 +115,4 @@ main section ul{
 
 main section ul li{margin: auto 10px;}
 
-main section ul li img{width: 50px;}
+main section ul li img{width: 40px;}
