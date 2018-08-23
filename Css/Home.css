@@ -241,4 +241,24 @@ aside section.tags ul li{
 aside section.tags ul li a{color: #fff;}
 
 /* Form */
-form h1{text-align: center}
+aside form{
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+aside form input{
+    display: block;
+    margin: 15px auto;
+    padding: 10px 20px;
+    direction: rtl;
+    border-radius: 10px;
+    outline-color: var(--red);
+}
+
+aside form input:focus{border-radius: 0}
+
+aside form input[type="submit"]{
+    display: block;
+    margin-bottom: 15px;
+}
