@@ -91,6 +91,7 @@ main{
     background-color: #fff;
     padding: 7px 35px 0;
     margin-right: 20px;
+    margin-bottom: 50px;
 }
 
 main section{
@@ -129,7 +130,7 @@ main .bodySection p:first-of-type{
     color: #000;
 }
 
-main .bodySection p>i{margin: auto 10px auto 20px;} 
+main .bodySection p>a>i{margin: auto 10px auto 20px;} 
 
 main .bodySection p:last-of-type{
     direction: rtl;
@@ -142,7 +143,13 @@ main .bodySection p span.tag{
     padding: 5px 10px;
 }
 
-main .bodySection a{
+main .bodySection p span.tag:hover{background-color: var(--blue)}
+
+main .bodySection p a:last-of-type{color: black}
+
+main .bodySection p a:hover{text-decoration: none}
+
+main .bodySection a.more{
     display: block;
     float: right;
     color: var(--dark-blue);
@@ -152,7 +159,7 @@ main .bodySection a{
     transition: all 0.5s ease-in-out;
 }
 
-main .bodySection a:hover{
+main .bodySection a.more:hover{
     transform: scale(1.2, 1);
     text-decoration: none;
     background-color: var(--blue);
@@ -174,91 +181,4 @@ main .bodySection a:hover{
         display: block;
         margin-bottom: 5px;
     }    
-}
-
-/* Aside */
-aside{
-    margin-top: 50px;
-    width: 100%;
-}
-
-aside section{
-    background-color: #fff;
-    padding: 7px 10px 0;
-}
-
-aside h2{
-    text-align: center;
-    text-decoration: underline;
-    color: var(--dark-blue);
-}
-
-aside ul{padding: 20px 0 0;}
-
-aside ul li{
-    list-style: none;
-    text-align: center;
-}
-
-aside ul li a{color: #999;}
-
-aside ul hr{margin: 10px 0;}
-
-aside ul li a:hover{
-    color: #000;
-    text-decoration: none;
-}
-
-aside section .dropdown>a{
-    color: #000;
-    display: block;
-    margin: 0 auto;
-    width: max-content;
-    padding-bottom: 20px
-}
-
-aside section .dropdown ul li a{color: #999}
-
-aside section .dropdown ul li a:hover, aside section .dropdown ul li a:focus{
-    color: #000;
-    background-color: transparent;
-}
-
-/* Tags */
-aside section.tags{margin-top: 20px}
-
-aside section.tags ul{
-    display: flex;
-    flex-wrap: wrap
-}
-
-aside section.tags ul li{
-    background-color: var(--dark-blue);
-    padding: 5px 10px;
-    margin: 5px;
-}
-
-aside section.tags ul li a{color: #fff;}
-
-/* Form */
-aside form{
-    background-color: #fff;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-aside form input{
-    display: block;
-    margin: 15px auto;
-    padding: 10px 20px;
-    direction: rtl;
-    border-radius: 10px;
-    outline-color: var(--red);
-}
-
-aside form input:focus{border-radius: 0}
-
-aside form input[type="submit"]{
-    display: block;
-    margin-bottom: 15px;
 }
