@@ -71,15 +71,15 @@ header .card ul li a img{width: 40px}
 }
 
 /* Articles */
-main .container{
+main .articles{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
 }
 
-main .container::before{display: none}
+main .articles::before{display: none}
 
-main .container section{
+main .articles section{
     background-color: #fff;
     border-radius: 20px;
     direction: rtl;
@@ -89,30 +89,35 @@ main .container section{
 }
 
 @media screen and (max-width: 991px){
-    main .container{grid-template-columns: 1fr 1fr}
+    main .articles{grid-template-columns: 1fr 1fr}
 }
 
 @media screen and (max-width: 767px){
-    main .container{grid-template-columns: 1fr}
+    main .articles{grid-template-columns: 1fr}
 }
 
-main .container section h2{
+main .articles section h2{
     text-align: center;
     color: var(--dark-blue)
 }
 
-main .container section img{width: 100%}
+main .articles section img{width: 100%}
 
-main .container section img:hover{
+main .articles section img:hover{
     transform: scale(1.05);
     transition: all 0.3s;
 }
 
-main .container section img.img-rounded{border-radius: 20px}
+main .articles section img.img-rounded{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
 
-main .container section p{margin: 0 20px}
+main .articles section p{margin: 0 20px}
 
-main .container section>a{
+main .articles section>a{
     display: block;
     margin: 10px 20px ;
     width: max-content;
@@ -121,7 +126,7 @@ main .container section>a{
     transform: scale(0.9, 1)
 }
 
-main .container section>a:focus, main .container section>a:hover{
+main .articles section>a:focus, main .articles section>a:hover{
     background-color: var(--blue);
     text-decoration: none;
     color: #fff;
@@ -129,7 +134,7 @@ main .container section>a:focus, main .container section>a:hover{
     transition: all 1s;
 }
 
-main .container section .category{
+main .articles section .category{
     border-top: 1px solid #b4b4b4;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -139,27 +144,27 @@ main .container section .category{
     font-size: 15px;
 }
 
-main .container section .category p:first-of-type{border-left: 1px solid #b4b4b4}
+main .articles section .category p:first-of-type{border-left: 1px solid #b4b4b4}
 
-main .container section .category a{color: #333;}
+main .articles section .category a{color: #333;}
 
 @media screen and (max-width: 1200px) and (min-width: 992px){
-    main .container section .category{
+    main .articles section .category{
         display: block;
         text-align: center
     }
-    main .container section .category p:first-of-type{
+    main .articles section .category p:first-of-type{
         border-left: 0;
         border-bottom: 1px solid #b4b4b4;
     }
 }
 
 @media screen and (max-width: 400px){
-    main .container section .category{
+    main .articles section .category{
         display: block;
         text-align: center
     }
-    main .container section .category p:first-of-type{
+    main .articles section .category p:first-of-type{
         border-left: 0;
         border-bottom: 1px solid #b4b4b4;
     }

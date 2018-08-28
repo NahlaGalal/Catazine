@@ -24,35 +24,36 @@ main section p{
 main section a{font-size: 1.2em;}
 
 /* Form */
-main form{
-    background-color: rgba(217, 217, 217, 0.9);
+main.container form{
+    background-color: #F4F7FA;
     padding: 20px;
+    border-radius: 30px;
+    border: 2px inset #F4F7FA;
 }
 
-main form *{
+main.container form *{
     display: block;
     direction: rtl;
-    margin-top: 20px;
     margin: 15px auto;
+    margin-top: 20px;
     padding: 10px 20px;
     width: 350px;
     border: 2px inset #DDD;
     border-radius: 10px;
     outline-color: #F5F9FA;
-    width: 100%
 }
 
-main form *:focus{
+main.container form *:focus{
     border-radius: 0;
     background-color: #F5F9FA;
     color: #697f8f;
 }
 
-main form textarea{
+main.container form textarea{
     height: 150px
 }
 
-main form input[type="submit"]{
+main.container form input[type="submit"]{
     width: max-content;
     padding: 10px 30px;
     display: block;
@@ -63,6 +64,8 @@ main form input[type="submit"]{
 @media screen and (max-width: 767px){
     main{
         display: flex;
-        flex-direction: column
+        flex-direction: column-reverse
     }
+    main.container form{margin: 20px 0}
+    main.container form *{width: 100%}
 }

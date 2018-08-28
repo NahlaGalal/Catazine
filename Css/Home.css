@@ -92,6 +92,7 @@ main{
     padding: 7px 35px 0;
     margin-right: 20px;
     margin-bottom: 50px;
+    flex: 3;
 }
 
 main section{
@@ -117,8 +118,8 @@ main section .date hr{border-top: 2px solid #999}
 
 main section img{
     margin-left: 20px;
-    height: 350px;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s linear;
+    width: 700px;
 }
 
 main section img:hover{transform: scale(1.05)}
