@@ -21,11 +21,11 @@
       <div id="collapse" class="collapse navbar-collapse">
         <!-- List nav -->
         <ul class="nav navbar-nav">
-          <li><a href="/">الصفحة الرئيسية</a></li>
-          <li><a href="/Articles">المقالات</a></li>
-          <li><a href="/Members">فريق العمل</a></li>
-          <li class="active"><a>عنا</a></li>
-          <li><a href="/Contact">اتصل بنا</a></li>
+          <li class="<% if(docType==="/"){ %>active<% } %>"><a href="/">الصفحة الرئيسية</a></li>
+          <li class="<% if(docType==="/articles"){ %>active<% } %>"><a href="/Articles">المقالات</a></li>
+          <li class="<% if(docType==="/members"){ %>active<% } %>"><a href="/Members">فريق العمل</a></li>
+          <li class="<% if(docType==="/about"){ %>active<% } %>"><a href="/About">عنا</a></li>
+          <li class="<% if(docType==="/contact"){ %>active<% } %>"><a href="/Contact">اتصل بنا</a></li>
           <li><input type="search" name="Search" id="Search" placeholder="أبحث عن"> </li>
         </ul>
       </div>
