@@ -1,92 +1,38 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About us</title>
-    <link rel="stylesheet" href="Assets/fontawesome.min.css">
-    <link rel="stylesheet" href="Assets/normalize.min.css">
-    <link rel="stylesheet" href="Assets/bootstrap.min.css">
-    <link rel="stylesheet" href="Assets/style.min.css">
-    <link rel="stylesheet" href="Css/About.min.css">
+<%- include('./includes/head.ejs') %>
+<link rel="stylesheet" href="/public/Css/About.min.css">
 </head>
+
 <body>
-    <header>
-        <!-- Navbar -->
-        <nav class="nav navbar-default"
-            id="navbar">
-            <div class="container">
-                <div class="navbar-header">
-
-                    <!-- Button Collapse -->
-                    <button class="navbar-toggle collapsed"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#collapse"
-                            aria-expanded="false">
-                        <span class="sr-only">Nvabar collapse</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- Navbar brand -->
-                    <a href="/" class="navbar-brand brand-header">كاتازين</a>
-                </div>
-
-                <!-- Navbar brand -->
-                <a href="/" class="navbar-brand">كاتازين</a>
-                <div id="collapse" class="collapse navbar-collapse">
-                    <!-- List nav -->
-                    <ul class="nav navbar-nav">
-                        <li><a href="/">الصفحة الرئيسية</a></li>
-                        <li><a href="/Articles">المقالات</a></li>
-                        <li><a href="/Members">فريق العمل</a></li>
-                        <li class="active"><a>عنا</a></li>
-                        <li><a href="/Contact">اتصل بنا</a></li>
-                        <li><input type="search" name="Search" id="Search" placeholder="أبحث عن"> </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main -->
-    <main class="container">
-        <i class="fas fa-quote-right"></i>
-        <p>ندعوك ﻟﻤﻐﺎﻣﺮة ﻣﺜﻴﺮة ﻣﻊ CATazine، اﻟﻤﺠﻠﺔ اﻟﺮﺳﻤﻴﺔ ﻟﻔﺮﻳﻖ CAT ، ﺣﻴﺚ ﺗﻨﻘﻞ ﻟﻨﺎ أﻓﻀﻞ اﻟﺘﻄﻮراﺕ ﻓﻰ ﻣﺠﺎﻻت اﻟﻌﻠﻮم واﻟﺘﻜﻨﻮﻟﻮﺟﻴﺎ ﻣﺠﻠﺔ ﻛﺎﺗﺎزﻳﻦ ﺗﻮﻓﺮ ﻟﻚ ﻣﻌﻠﻮﻣﺎت وادوات وﻣﺮاﺟﻌﺎت ﻣﻨﺼﻔﺔ وﺑﻌﺾ اﻟﻨﺼﺎئح اﻟﺘﻜﻨﻮﻟﻮﺟﻴﺔ اﻟﺘﻰ ﺗﺠﻌﻠﻚ ﻋﻠﻰ اﻃﻼع داﺋﻤﺎ .الكاﺗﺎزﻳﻦ ﻣﺠﻠﺔ ﻋﺮﺑﻴﺔ دورﻳﺔ ﻣﺘﺨﺼﺼﻪ ﻓﻲ ﻛﻞ ﻣﺎ ﻳﺨﺺ ﺗﻜﻨﻮﻟﻮﺟﻴﺎ اﻟﻤﻌﻠﻮﻣﺎت ﻋﻦ ﻃﺮﻳﻖ ﻣﺸﺎرﻛﺔ اﻟﻤﺒﺎدرﻳﻦ ﺑﻤﻌﺮﻓﺘﻬﻢ ﻭﺧﺒﺮاﺗﻬﻢ ﻭاﻟﺬي ﺑﺪوره ﻳﺨﻠﻖ ﺑﺄﺳﻬﻞ اﻟﻄﺮق ذﻟﻚ اﻟﺘﻮاﺻﻞ ﺑﻴﻦ ﻣﻦ وﺟﺪ للاﺣﺘﺮاف ﻃﺮﻳﻘﺎ وﻣﻦ وﺿﻊ أوﻟﻰ ﺧﻄﻮاﺗﻪ ﻋﻠﻴﻪ.ﺗﻢ ﺗﺄﺳﻴﺲ اﻟﻤﺠﻠﺔ ﻓﻲ ﻋﺎم 2008 م وﺑﺪأ اﻟﻨﺸﺮ ﻓﻲ ﻧﻔﺲ اﻟﻌﺎم ﻟﻴﺘﻢ الإﻋﻼن رﺳﻴﻤﺎ ﻋﻦ اﻧﻄﻼق أول ﻋﺪد ﻟﻤﺠﻠﺔ ” ﻛﺎﺗﺎزﻳﻦ “. </p>
-        <p>ﺣﻴﺚ ﻛﺎﻧﺖ آﻧﺬاك ﻣﺼﺪر إﻟﻬﺎم ﻟﻜﺜﻴﺮ ﻣﻦ اﻟﻤﺠﺘﻤﻌﺎت اﻟﺘﻘﻨﻴﺔ اﻟﺘﻲ ﺗﻮاﺟﺪت ﻋﻠﻰ اﻟﺴﺎﺣﺔ ، ﻟﺘﺤﺬوا ﺣﺬوﻫﺎ ﻓﻲ ﺳﺒﻴﻞ اﺛﺮاء اﻟﻤﺤﺘﻮى اﻟﺘﻘﻨﻲ ، وﺑﺎﻟﻔﻌﻞ ﻗﺪ ﺗﺸﻜﻠﺖ ﻗﺎﻋﺪة ﻋﺮﻳﻀﺔ ﻣﻦ اﻟﻤﺘﺎﺑﻌﻴﻦ ﻟﻠﻤﺠﻠﺔ ﻣﻤﺎ أﻋﻄﻰ اﻟﺪاﻓﻊ ﻟﻔﺮﻳﻖ اﻟﺘﺤﺮﻳﺮ ﻻﺳﺘﻜﻤﺎل اﻟﻤﺴﻴﺮة ﻭﺑﺪأ اﻟﺘﺠﻬﻴﺰ ﻟﻨﺸﺮ اﻟﻌﺪد اﻟﺜﺎﻧﻲ ﻣﻦ المجلة . </p>
-        <p>ﻓﻲ ﻋﺎم 2009 ﺗﻢ اﻃﻼق اﻟﻌﺪد اﻟﺜﺎﻧﻲ ﻣﻦ اﻟﻤﺠﻠﺔ وﻗﺪ ﻻﻗﻰ ﻗﺒﻮﻻ واﺳﻌﺎ ﻟﺪى اﻟﻘﺮاء ، وﻳﺮﺟﻊ ذﻟﻚ ﻟﻤﺎ ﻛﺎن ﻳﺤﺘﻮﻳﻪ ﻣﻦ ﻣﻮاﺿﻴﻊ ﻣﺘﻌﺪدة وﻣﺘﻤﻴﺰة وﺷﺎﻣﻠﺔ ﻟﺠﻤﻴﻊ ﻓﺮوع ومجاﻻت ﺗﻜﻨﻮﻟﻮﺟﻴﺎ اﻟﻤﻌﻠﻮﻣﺎت. </p>
-        <p>ﺧﻼل ﺗﻠﻚ اﻟﻔﺘﺮات اﻟﻤﺘﻘﻄﻌﺔ ﻛﺎن ﻻﺑﺪ للكات كأي ﻣﺠﻤﺘﻊ ﺗﻘﻨﻲ ﻣﺪرك ﻷﻫﻤﻴﺔ اﻟﺘﻮاﺻﻞ اﻟﻔﻌﺎل ﻣﻊ اﻟﺠﻤﻬﻮر ان ﻳﻘﻮم ﺑﺄﻧﺸﺎء ﻣﻨﺼﺔ ﺗﻮاﺻﻞ اﺧﺮى ﻣﻊ اﻟﻘﺮاء ﺗﻤﻜﻨﻬﻢ ﻣﻦ اﻟﺘﻔﺎﻋﻞ ﺑﺸﻜﻞ ﻓﻌﺎل ﻭﺳﺮﻳﻊ ﻭﻣﻦ ﻫﺬا اﻟﻤﻨﻄﻠﻖ ﺟﺎءت ﻓﻜﺮة اﻧﺸﺎء ﻧﺴﺨﺔ اﻟﻜﺘﺮوﻧﻴﺔ اﺳﺒﻮﻋﻴﺔ ﻣﻦ اﻟﻤﺠﻠﺔ ﺳُﻤﻴﺖ ﻻﺣﻘﺎ ﺑﺎﺳﻢ ”ﻛﺎﺗﺎزﻳﻦ ﻻﻳﻒ “ . </p>
-        <p>ﺑﺪأ اﻟﻨﺸﺮ ﻓﻲ اﻟﻤﺠﻠﺔ الأﻛﺘﺮوﻧﻴﺔ ﻋﺎﻡ 2010 ﻭﻗﺪ اﺳﺘﻬﺪف أول ﻣﻘﺎل ﻛﺘﺐ، ﻣﺠﺎﻝ اﻝ- Grapic Desing &amp; 3D desings ﻭﺗﻼه ﻣﻘﺎل ﺑﻌﻨﻮان Introduction to Bash Scripting ، ﻭﻛﺎﻧﺖ ﺳﻴﺎﺳﺔ ﻓﺮﻳﻖ اﻟﺘﺤﺮﻳﺮ ﻣﻦ أﻫﻢ اﺳﺒﺎب اﻟﺘﻲ ﺟﺬﺑﺖ ﺟﻤﻬﻮر اﻟﻘﺮاء ﻭاﻟﺮاﻏﺒﻴﻦ ﻓﻲ اﻟﻜﺘﺎﺑﺔ ﺑﺎﻟﻤﺠﻠﺔ ، ﻭاﺳﺘﻤﺮ اﻟﻨﺸﺮ اﻻﺳﺒﻮﻋﻲ ﻟﻠﻤﺠﻠﺔ ﻟﻤﺪة ﻋﺎم ﻭﻧﺼﻒ اﻟﻌﺎم ﺣﺘﻰ ﺟﺎء اﻟﻘﺮار ﺑﻤﻀﺎﻋﻔﺔ اﻟﺠﻬﺪ ﻟﻴﺘﻢ ﻧﺸﺮ ﻋﺪد ﻳﻮﻣﻲ ﻣﻦ اﻟﻤﺠﻠﺔ ﻟﻤﻮاﻛﺒﺔ ﻣﺘﻄﻠﺒﺎت اﻟﺠﻤﻬﻮر ﻓﻲ ﻛﺎﻓﺔ اﻟﻤﺠﺎﻻت اﻟﺘﻘﻨﻴﺔ . </p>
-        <p>وﻛﻨﻮع ﻣﻦ اﻟﺘﻔﺎﻋﻞ ﺑﻴﻦ ﻓﺮﻳﻖ الإدارة واﻟﺠﻤﻬﻮر ﺗﻢ ﻓﺘﺢ ﺑﺎب اﻟﺘﺪوﻳﻦ اﻟﻤﺸﺮوط ﺑﺎﻟﻤﺠﻠﺔ ، ﺣﻴﺚ ﻛﺎﻧﺖ وﻣﺎزاﻟﺖ ﺗﻠﻚ اﻟﺸﺮوط ﻣﻦ اﻫﻢ اﻟﻌﻮاﻣﻞ اﻟﺘﻲ ادت اﻟﻰ اﻻرﺗﻘﺎء ﺑﺎﻟﻤﺤﺘﻮى اﻟﺘﻘﻨﻲ اﻟﻌﺮﺑﻲ ﻋﻠﻰ الإﻧﺘﺮﻧﺖ ﻓﻲ ﻧﻄﺎق ﻋﻤﻞ اﻟﻔﺮﻳﻖ </p>
-        <p>وﻣﻦ أﻫﻢ ﻫﺬه اﻟﺸﺮوط ﻫﻲ اﻟﻤﺤﺎﻓﻈﺔ ﻋﻠﻰ ﺣﻘﻮق اﻟﻤﻠﻜﻴﺔ واﻟﻨﺸﺮ ، ﺑﺤﻴﺚ ﻻ ﻳﺴﻤﺢ ﺑﻨﺸﺮ اﻟﻤﻮاﺿﻴﻊ واﻟﻤﻘﺎﻻت اﻟﻤﻜﺮرة أو اﻟﻤﻨﺸﻮرة ﻣﺴﺒﻘﺎ ﻓﻲ أي ﻣﻮﻗﻊ أو ﺟﻬﺔ اﺧﺮى، ﻧﺎﻫﻴﻚ ﻋﻦ ﺿﺮورة اﻟﺘﺄﻛﺪ ﻣﻦ ﺳﻼﻣﺔ اﻟﻤﻮاﺿﻴﻊ اﻣﻼﺋﻴﺎ ﻭﺗﻘﻨﻴﺎ ﻗﺒﻞ اﻟﻨﺸﺮ، ﻣﻤﺎ ﻳﻀﻔﻲ ﻟﻤﺴﺔ ﻣﻦ اﻟﺮﻗﻲ ﻳﺴﺘﺸﻌﺮﻫﺎ ﻗﺎرئ اﻟﻤﺠﻠﺔ. </p>
-        <i class="fas fa-quote-left"></i>
-        <p>يمكنك الإطلاع على قواعد النشر من <a href="https://docs.google.com/document/d/1TxunHZp60Fn6ArasuPN7Xv73QBjMrzgbraFCcual7hs/edit" target="_blank">هنا</a></p>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <hr>
-            <div class="row">
-                <div class="col-sm-6 copyright">
-                    <p>Run with <span>&hearts;</span> by</p>
-                    <img src="Images/@Cat.jpg" alt="Cat Reloaded"> 
-                    <p>Copyright 2018 CATReloaded team &copy; All rights reserved</p>
-                </div>
-                <div class="col-sm-6 social">
-                    <p>تابعنا على</p>
-                    <a href="https://www.facebook.com/CATReloaded" target="_blank"> <img src="Images/facebook.svg" alt="Facebook page"> </a>
-                    <a href="https://twitter.com/CATreloaded" target="_blank"><img src="Images/twitter.svg" alt="Twitter account"></a>
-                    <a href="https://plus.google.com/u/0/112664705241777101516/posts" target="_blank"><img src="Images/google+.svg" alt="Google plus "></a>
-                    <a href="https://www.youtube.com/channel/UC0Zh6dv4XwPUBCBjWA5neTg" target="_blank"><img src="Images/youtube.svg" alt="Youtube channel"></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="Assets/jquery-2.1.4.min.js"></script>
-    <script src="Assets/bootstrap.min.js"></script>
-</body>
-</html>
+	<%- include('./includes/header.ejs') %>
+	</header>
+	<!-- Main -->
+	<main class="container">
+		<i class="fas fa-quote-right"></i>
+		<p>ندعوك ﻟﻤﻐﺎﻣﺮة ﻣﺜﻴﺮة ﻣﻊ CATazine، اﻟﻤﺠﻠﺔ اﻟﺮﺳﻤﻴﺔ ﻟﻔﺮﻳﻖ CAT ، ﺣﻴﺚ ﺗﻨﻘﻞ ﻟﻨﺎ أﻓﻀﻞ اﻟﺘﻄﻮراﺕ ﻓﻰ ﻣﺠﺎﻻت اﻟﻌﻠﻮم
+			واﻟﺘﻜﻨﻮﻟﻮﺟﻴﺎ ﻣﺠﻠﺔ ﻛﺎﺗﺎزﻳﻦ ﺗﻮﻓﺮ ﻟﻚ ﻣﻌﻠﻮﻣﺎت وادوات وﻣﺮاﺟﻌﺎت ﻣﻨﺼﻔﺔ وﺑﻌﺾ اﻟﻨﺼﺎئح اﻟﺘﻜﻨﻮﻟﻮﺟﻴﺔ اﻟﺘﻰ ﺗﺠﻌﻠﻚ ﻋﻠﻰ اﻃﻼع داﺋﻤﺎ
+			.الكاﺗﺎزﻳﻦ ﻣﺠﻠﺔ ﻋﺮﺑﻴﺔ دورﻳﺔ ﻣﺘﺨﺼﺼﻪ ﻓﻲ ﻛﻞ ﻣﺎ ﻳﺨﺺ ﺗﻜﻨﻮﻟﻮﺟﻴﺎ اﻟﻤﻌﻠﻮﻣﺎت ﻋﻦ ﻃﺮﻳﻖ ﻣﺸﺎرﻛﺔ اﻟﻤﺒﺎدرﻳﻦ ﺑﻤﻌﺮﻓﺘﻬﻢ ﻭﺧﺒﺮاﺗﻬﻢ
+			ﻭاﻟﺬي ﺑﺪوره ﻳﺨﻠﻖ ﺑﺄﺳﻬﻞ اﻟﻄﺮق ذﻟﻚ اﻟﺘﻮاﺻﻞ ﺑﻴﻦ ﻣﻦ وﺟﺪ للاﺣﺘﺮاف ﻃﺮﻳﻘﺎ وﻣﻦ وﺿﻊ أوﻟﻰ ﺧﻄﻮاﺗﻪ ﻋﻠﻴﻪ.ﺗﻢ ﺗﺄﺳﻴﺲ اﻟﻤﺠﻠﺔ ﻓﻲ ﻋﺎم
+			2008 م وﺑﺪأ اﻟﻨﺸﺮ ﻓﻲ ﻧﻔﺲ اﻟﻌﺎم ﻟﻴﺘﻢ الإﻋﻼن رﺳﻴﻤﺎ ﻋﻦ اﻧﻄﻼق أول ﻋﺪد ﻟﻤﺠﻠﺔ ” ﻛﺎﺗﺎزﻳﻦ “. </p>
+		<p>ﺣﻴﺚ ﻛﺎﻧﺖ آﻧﺬاك ﻣﺼﺪر إﻟﻬﺎم ﻟﻜﺜﻴﺮ ﻣﻦ اﻟﻤﺠﺘﻤﻌﺎت اﻟﺘﻘﻨﻴﺔ اﻟﺘﻲ ﺗﻮاﺟﺪت ﻋﻠﻰ اﻟﺴﺎﺣﺔ ، ﻟﺘﺤﺬوا ﺣﺬوﻫﺎ ﻓﻲ ﺳﺒﻴﻞ اﺛﺮاء اﻟﻤﺤﺘﻮى
+			اﻟﺘﻘﻨﻲ ، وﺑﺎﻟﻔﻌﻞ ﻗﺪ ﺗﺸﻜﻠﺖ ﻗﺎﻋﺪة ﻋﺮﻳﻀﺔ ﻣﻦ اﻟﻤﺘﺎﺑﻌﻴﻦ ﻟﻠﻤﺠﻠﺔ ﻣﻤﺎ أﻋﻄﻰ اﻟﺪاﻓﻊ ﻟﻔﺮﻳﻖ اﻟﺘﺤﺮﻳﺮ ﻻﺳﺘﻜﻤﺎل اﻟﻤﺴﻴﺮة ﻭﺑﺪأ
+			اﻟﺘﺠﻬﻴﺰ ﻟﻨﺸﺮ اﻟﻌﺪد اﻟﺜﺎﻧﻲ ﻣﻦ المجلة . </p>
+		<p>ﻓﻲ ﻋﺎم 2009 ﺗﻢ اﻃﻼق اﻟﻌﺪد اﻟﺜﺎﻧﻲ ﻣﻦ اﻟﻤﺠﻠﺔ وﻗﺪ ﻻﻗﻰ ﻗﺒﻮﻻ واﺳﻌﺎ ﻟﺪى اﻟﻘﺮاء ، وﻳﺮﺟﻊ ذﻟﻚ ﻟﻤﺎ ﻛﺎن ﻳﺤﺘﻮﻳﻪ ﻣﻦ ﻣﻮاﺿﻴﻊ
+			ﻣﺘﻌﺪدة وﻣﺘﻤﻴﺰة وﺷﺎﻣﻠﺔ ﻟﺠﻤﻴﻊ ﻓﺮوع ومجاﻻت ﺗﻜﻨﻮﻟﻮﺟﻴﺎ اﻟﻤﻌﻠﻮﻣﺎت. </p>
+		<p>ﺧﻼل ﺗﻠﻚ اﻟﻔﺘﺮات اﻟﻤﺘﻘﻄﻌﺔ ﻛﺎن ﻻﺑﺪ للكات كأي ﻣﺠﻤﺘﻊ ﺗﻘﻨﻲ ﻣﺪرك ﻷﻫﻤﻴﺔ اﻟﺘﻮاﺻﻞ اﻟﻔﻌﺎل ﻣﻊ اﻟﺠﻤﻬﻮر ان ﻳﻘﻮم ﺑﺄﻧﺸﺎء ﻣﻨﺼﺔ
+			ﺗﻮاﺻﻞ اﺧﺮى ﻣﻊ اﻟﻘﺮاء ﺗﻤﻜﻨﻬﻢ ﻣﻦ اﻟﺘﻔﺎﻋﻞ ﺑﺸﻜﻞ ﻓﻌﺎل ﻭﺳﺮﻳﻊ ﻭﻣﻦ ﻫﺬا اﻟﻤﻨﻄﻠﻖ ﺟﺎءت ﻓﻜﺮة اﻧﺸﺎء ﻧﺴﺨﺔ اﻟﻜﺘﺮوﻧﻴﺔ اﺳﺒﻮﻋﻴﺔ ﻣﻦ
+			اﻟﻤﺠﻠﺔ ﺳُﻤﻴﺖ ﻻﺣﻘﺎ ﺑﺎﺳﻢ ”ﻛﺎﺗﺎزﻳﻦ ﻻﻳﻒ “ . </p>
+		<p>ﺑﺪأ اﻟﻨﺸﺮ ﻓﻲ اﻟﻤﺠﻠﺔ الأﻛﺘﺮوﻧﻴﺔ ﻋﺎﻡ 2010 ﻭﻗﺪ اﺳﺘﻬﺪف أول ﻣﻘﺎل ﻛﺘﺐ، ﻣﺠﺎﻝ اﻝ- Grapic Desing &amp; 3D desings ﻭﺗﻼه
+			ﻣﻘﺎل ﺑﻌﻨﻮان Introduction to Bash Scripting ، ﻭﻛﺎﻧﺖ ﺳﻴﺎﺳﺔ ﻓﺮﻳﻖ اﻟﺘﺤﺮﻳﺮ ﻣﻦ أﻫﻢ اﺳﺒﺎب اﻟﺘﻲ ﺟﺬﺑﺖ ﺟﻤﻬﻮر اﻟﻘﺮاء
+			ﻭاﻟﺮاﻏﺒﻴﻦ ﻓﻲ اﻟﻜﺘﺎﺑﺔ ﺑﺎﻟﻤﺠﻠﺔ ، ﻭاﺳﺘﻤﺮ اﻟﻨﺸﺮ اﻻﺳﺒﻮﻋﻲ ﻟﻠﻤﺠﻠﺔ ﻟﻤﺪة ﻋﺎم ﻭﻧﺼﻒ اﻟﻌﺎم ﺣﺘﻰ ﺟﺎء اﻟﻘﺮار ﺑﻤﻀﺎﻋﻔﺔ اﻟﺠﻬﺪ ﻟﻴﺘﻢ
+			ﻧﺸﺮ ﻋﺪد ﻳﻮﻣﻲ ﻣﻦ اﻟﻤﺠﻠﺔ ﻟﻤﻮاﻛﺒﺔ ﻣﺘﻄﻠﺒﺎت اﻟﺠﻤﻬﻮر ﻓﻲ ﻛﺎﻓﺔ اﻟﻤﺠﺎﻻت اﻟﺘﻘﻨﻴﺔ . </p>
+		<p>وﻛﻨﻮع ﻣﻦ اﻟﺘﻔﺎﻋﻞ ﺑﻴﻦ ﻓﺮﻳﻖ الإدارة واﻟﺠﻤﻬﻮر ﺗﻢ ﻓﺘﺢ ﺑﺎب اﻟﺘﺪوﻳﻦ اﻟﻤﺸﺮوط ﺑﺎﻟﻤﺠﻠﺔ ، ﺣﻴﺚ ﻛﺎﻧﺖ وﻣﺎزاﻟﺖ ﺗﻠﻚ اﻟﺸﺮوط ﻣﻦ
+			اﻫﻢ اﻟﻌﻮاﻣﻞ اﻟﺘﻲ ادت اﻟﻰ اﻻرﺗﻘﺎء ﺑﺎﻟﻤﺤﺘﻮى اﻟﺘﻘﻨﻲ اﻟﻌﺮﺑﻲ ﻋﻠﻰ الإﻧﺘﺮﻧﺖ ﻓﻲ ﻧﻄﺎق ﻋﻤﻞ اﻟﻔﺮﻳﻖ </p>
+		<p>وﻣﻦ أﻫﻢ ﻫﺬه اﻟﺸﺮوط ﻫﻲ اﻟﻤﺤﺎﻓﻈﺔ ﻋﻠﻰ ﺣﻘﻮق اﻟﻤﻠﻜﻴﺔ واﻟﻨﺸﺮ ، ﺑﺤﻴﺚ ﻻ ﻳﺴﻤﺢ ﺑﻨﺸﺮ اﻟﻤﻮاﺿﻴﻊ واﻟﻤﻘﺎﻻت اﻟﻤﻜﺮرة أو اﻟﻤﻨﺸﻮرة
+			ﻣﺴﺒﻘﺎ ﻓﻲ أي ﻣﻮﻗﻊ أو ﺟﻬﺔ اﺧﺮى، ﻧﺎﻫﻴﻚ ﻋﻦ ﺿﺮورة اﻟﺘﺄﻛﺪ ﻣﻦ ﺳﻼﻣﺔ اﻟﻤﻮاﺿﻴﻊ اﻣﻼﺋﻴﺎ ﻭﺗﻘﻨﻴﺎ ﻗﺒﻞ اﻟﻨﺸﺮ، ﻣﻤﺎ ﻳﻀﻔﻲ ﻟﻤﺴﺔ ﻣﻦ
+			اﻟﺮﻗﻲ ﻳﺴﺘﺸﻌﺮﻫﺎ ﻗﺎرئ اﻟﻤﺠﻠﺔ. </p>
+		<i class="fas fa-quote-left"></i>
+		<p>يمكنك الإطلاع على قواعد النشر من <a
+				href="https://docs.google.com/document/d/1TxunHZp60Fn6ArasuPN7Xv73QBjMrzgbraFCcual7hs/edit"
+				target="_blank">هنا</a></p>
+	</main>
+	<%- include('./includes/end.ejs') %>
