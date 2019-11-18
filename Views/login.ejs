@@ -1,0 +1,14 @@
+<%- include('./includes/head.ejs') %>
+<link rel="stylesheet" href="/public/Css/signup.min.css">
+</head>
+
+<body>
+  <%- include('./includes/header.ejs') %>
+  <main class="container">
+    <form action="/login" method="POST">
+      <input type="text" name="Name" id="name" placeholder="الإسم*">
+      <input type="email" name="Mail" id="mail" placeholder="البريد الإلكتروني*">
+      <input type="submit" value="دخول" class="btn btn-primary">
+    </form>
+  </main>
+</body>
