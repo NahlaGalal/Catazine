@@ -5,10 +5,15 @@
 <body>
   <%- include('./includes/header.ejs') %>
   <main class="container">
-    <form action="/login" method="POST">
-      <input type="text" name="Name" id="name" placeholder="الإسم*">
-      <input type="email" name="Mail" id="mail" placeholder="البريد الإلكتروني*">
+    <p><%= errorMessage %> </p>
+    <form action="/login" method="POST" novalidate>
+      <input type="email" name="mail" id="mail" placeholder="البريد الإلكتروني*" value="<%= oldInput.mail %>"
+        class="<%if(errorInput === "mail") { %>unvalid<% } %>">
+      <input type="password" name="password" id="password" placeholder="كلمة المرور*" value="<%= oldInput.password %>"
+        class="<%if(errorInput === "password") { %>unvalid<% } %>">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
       <input type="submit" value="دخول" class="btn btn-primary">
+      <a href="/"> نسيت كلمة المرور ؟</a>
     </form>
   </main>
 </body>

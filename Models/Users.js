@@ -10,7 +10,7 @@ const Users = new Schema({
 		type: String,
 		required: true,
 	},
-	email: {
+	mail: {
 		type: String,
 		required: true
 	},
@@ -22,19 +22,20 @@ const Users = new Schema({
 		type: String,
 		required:  true
 	},
-	facebookLink: {
+	facebook: {
 		type: String,
 		required: true
 	},
-	twitterLink: {
+	twitter: {
 		type: String,
 		required: true
 	},
-	googlePlusLink: {
+	google: {
 		type: String,
 		required: true
 	},
 	resetToken: String,
+	resetTokenExpiration: Date,
 	articles: {
 		type: [Schema.Types.ObjectId],
 		ref: "Article"
