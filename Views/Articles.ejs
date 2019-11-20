@@ -79,20 +79,18 @@
 
 		<!-- Articles -->
 		<div class="articles">
-			<section>
-				<img src="/public/Images/Dev-ops.png" alt="DevOps article" class="img-responsive img-rounded">
-				<h2>What is DevOps</h2>
-				<p>
-					مصطلح جديد غير مألوف للبعض، ما هو؟ هل هو تكنولوجيا Technology أم عملية process أم عنوان وظيفة أم فلسفة؟ كمصطلح
-					ظهر في عام 2006 عن طريق شخص اسمه Patrick Debois. والـ devops ببساطة هو عبارة عن دمج ما بين حاجتين كما هو واضح
-					من اسمه ألا وهما: software development and operations. يجمع تخصصين مهمين ويضمن أن التواصل بين المطور...
-				</p>
-				<a href="/Article">استكمال القراءة</a>
-				<div class="category">
-					<p> <a href="#"> <i class="fas fa-tags"></i> Programming </a> </p>
-					<p> <a href="#"> <i class="fas fa-user"></i>Aya Elawdan </a> </p>
-				</div>
-			</section>
+			<% articles.forEach(article => { %>
+				<section>
+					<img src="<%= article.imageUrl %>" alt="<%= article.header %> article" class="img-responsive img-rounded">
+					<h2><%= article.header %></h2>
+					<p><%= article.content %></p>
+					<a href="/Article/<%= article._id %>">استكمال القراءة</a>
+					<div class="category">
+						<p> <a href="#"> <i class="fas fa-tags"></i> <%= article.category %> </a> </p>
+						<p> <a href="#"> <i class="fas fa-user"></i> <%= article.user.name %> </a> </p>
+					</div>
+				</section>
+			<% }) %>
 			<section>
 				<img src="/public/Images/Dev-ops.png" alt="DevOps article" class="img-responsive img-rounded">
 				<h2>What is DevOps</h2>

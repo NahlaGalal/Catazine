@@ -7,124 +7,34 @@
 	<!-- Main -->
 	<div class="container body">
 		<main>
-			<h1>What is DevOps</h1>
-			<img src="/public/Images/Dev-ops.png" alt="DevOps article" class="img-responsive">
+			<h1><%= article.header %></h1>
+			<img src="/<%= article.imageUrl %>>" alt="<%= article.header %> article" class="img-responsive">
 			<p>
-				<a href="/Articles"> <span class="tag"><i class="fas fa-tags"></i> Programming</span> </a>
-				<a href="/MemberArticles" class="articleWriter"> <i class="fas fa-user"></i> Aya Elawdan </a>
-				<span> <i class="far fa-calendar"></i> 15 سبتمبر 2016</span>
-				<span> <i class="far fa-comment"></i> 5 تعليقات</span>
+				<a href="/Articles"> <span class="tag"><i class="fas fa-tags"></i> <%= article.category %></span> </a>
+				<a href="/MemberArticles" class="articleWriter"> <i class="fas fa-user"></i> <%= article.user.name %> </a>
+				<span> <i class="far fa-calendar"></i> <%= article.date %></span>
+				<span> <i class="far fa-comment"></i> <%= article.comments.length %> تعليقات</span>
 			</p>
 
 			<!-- Article -->
 			<section>
-				<p>
-					مصطلح جديد غير مألوف للبعض، ما هو؟
-					هل هو تكنولوجيا Technology أم عملية process أم عنوان وظيفة أم فلسفة؟
-					كمصطلح ظهر في عام 2006 عن طريق شخص اسمه Patrick Debois.
-					والـ devops ببساطة هو عبارة عن دمج ما بين حاجتين كما هو واضح من اسمه ألا وهما: software development and
-					operations.
-					يجمع تخصصين مهمين ويضمن أن التواصل بين المطور developer وفرق تقنية المعلومات IT operations teams يكون تمام.
-					غالبًا المجموعتان المختلفتان عن بعضهما، كل واحد فيهما مسئول عن مهمات معينة specific tasks ولا يحدث تكامل
-					integration بين هذه الفرق بسهولة بسبب أن كل طرف فيهما مسئول عن الـ category المنتمي تحته فقط.
-					الشغل المسئول عنه الـ devops هو أنه سيعالج عملية التكامل integration process ويحسن العلاقة relationship أو
-					بمعنى آخر التواصل communication والتعاون collaboration بين الأقسام المختلفة باستخدام الـ DevOps methodologies.
-					ستختلف الأمور عن ذي قبل وفريق التطوير development team وفرق العمليات operations teams سيتعاونان مع بعضهما
-					البعض طوال مدة دورة حياة التطبيق Application Lifecycle، وهذا طبعًا سيزيد الفعالية efficiencies.
-					يعني نقدر نقول أن الـdevops هو تطوير للـ agile software development.
-					وما هو الـ agile software development؟
-					هو عبارة عن مصطلح بيندرج تحته طرق كتير خاصة بتطوير أي مشروع برمجي software project والتكرار iteration الذي
-					سيمشي عليه بدايةً من مرحلة تجميع المتطلبات من الأطراف الفاعلة stakeholders (المستخدمون الذين سيتعاملون مع هذا
-					النظام system) مرورًا بمراحل تحديد الدوال (المهام) functions والتحليل analysis والتنفيذ implementation
-					والاختبارات testing وفي النهاية الإصدار release والنشر deployment على أجهزة المستخدمين النهائية end user
-					devices والصيانة maintenance والتعديلات modifications التي ستحدث بعد الإصدار.
-					بمعني أن الـ devops هو تحسين enhancement لإدارة دورة حياة التطبيق التقليدية traditional application lifecycle
-					management القديمة المعتاد عليها في أي مشروع برمجي.
-					في الهندسة البرمجية software engineering، هناك طرق كثيرة لتطوير أي مشروع منهم على سبيل المثال نموذج الشلال
-					waterfall model ولكنها طريقة قديمة وقد تبدو غير فعالة inefficient ولكن لو تم استخدامها لن نحتاج أن نتعامل مع
-					جانب العمليات أثناء التطوير لأنها تقسم المشروع لأطوار phases وتكون عبارة عن دورة تطوير مستمر continuous
-					development cycle تمشي تباعًا ولا يحدث تفاعل interaction بين هذه الأطوار، بمعنى أنه بعد الانتهاء تمامًا من
-					الطور الأول يتم البدء في الثاني وهكذا (الأطوار ليست تدريجية incremental مع بعضها البعض).
-					في حين أن في الـ DevOps environment أصبحت الـ functions والمسئوليات مشتركة ويتحول الوضع من تطوير مستمر
-					continuous development لتكامل مستمر continuous integration.
-					دعنا نمشي مع المثال الآتي لأجل توضيح الفكرة بشكل أكبر:
-					لو مثلًا عندنا مطور في شركة يكتب كود يزيد به الميزات features أو يحدَّث الحماية لا بد أن ينتظر أسابيع حتى يدخل
-					الكود الإنتاج production.
-					وهذا التأخير ليس بالشيء الجيد لأن المنافسين competitors الموجودين يستطيعون نشر منتجاتهم أسرع من هذا المطور،
-					بالإضافة إلى أن هذا التأخير سيأثر على المنتجات الأخرى المنتظرة بسبب التأخير.
-					وطبعًا لما يُنشَر الكود على البيئات environments بالتأكيد ستحدث مشاكل لأن توليد generation هذا الكود كان لبيئة
-					المطور ولنظامه التشغيلي OS واللذان بالتأكيد سيختلفان عن الموجودين في بيئة الإنتاج.
-					سيحتاج مدير النظام system administrator زيادة عدد الخوادم (السيرفرات) ويوسع البنية التحتية infrastructure لأجل
-					استيعاب الخدمات الجديدة وكل هذا سيأثر على الكود الذي نشره المطور لأن العملية كلها متداخلة، فلا بد أن يتشارك
-					الاثنان المسئوليات لأجل تحسين أداء performance التطبيق ومحاولة عمل تشغيل آلي automation لكل شيء، يعني لاختبار
-					الكود code testing ولشغل البنية التحتية وسيُكتَب كود سيحدث له التكامل والاختبار والمراقبة monitoring والنشر
-					خلال ساعات قصيرة على عكس الطريقة التقليدية في كتابة software كبير خلال أسابيع أو شهور بالإضافة إلى أن بيئة
-					التطوير والإنتاج ستكون واحدة ولن تتغير الإعدادات configuration الخاص بها.
-					والجزء الأخر من هذه المعادلة هو ماي هي الأدوات المستخدمة لتحقيق هذا الكلام؟
-					من أمثلة الأدوات التي ستسمح بعملية الاختبار للكود الموجود في “مستودع كود المصدر” Source Code Repository
-					والبرامج هو Jenkins بالإضافة لـ GIT لعمل التوثيق documentation وكل التغيرات اللي ستحصل في كود التطبيق
-					application code وإدارة الإعدادات configuration management، بالإضافة لـ SonarQube و Artifactory.
-					وأمثلة أخرى للـ Source Code Repository هم Subversion و Cloudforce و TFS و Bitbucket
-					ومن الأدوات المستخدمة في إدارة الإعدادات chef أو puppet أو saltstack وكل هذه الأدوات ستسمح بأن نشر التطبيق
-					سيكون بطريقة الـ automation خلال عدة خوادم (سيرفرات) كثيرة جدًا في أماكن مختلفة تمامًا.
-					وستوجد أدوات مستخدمة لأجل قياس الأداء performance measurement.
-					و AWS و Microsoft Azure أمثلة للبنى التحتية الافتراضية virtual infrastructures المُستخدمة في عمل الـ devops،
-					والـ virtual infrastructures عبارة عن بائعين vendors يقدمون “منصة كخادم” (platform as a service (PaaS.
-					لكن توجد شركات كثيرة ليس عندهم خبرة أو معرفة بكيفية استخدام الأدوات الجديدة كلها وهنا يأتي دور Rackspace
-					Devops services.
-					وبعدما يتحقق الكلام ونطبق مفهوم الـ devops هذا سنرى مميزات ناتجة، وأهمها أن الـ software الذي تنشره الشركة
-					سيكون استقراره stability أعلى والتوليد أو الوصول لمرحلة الإنتاج أسرع ويصل للزبون customer في أسرع وقت ممكن
-					وكذلك تحديثات الإصدار release updates والصيانة maintenance والتعديلات اللي ستحصل بعدما يصل المنتج البرمجي
-					بالفعل للزبون ويعمل على منصته لأجل مطابقة متطلباته requirement بشكل أسرع.
-					وسبب ذلك يرجع لأن الـ DevOps culture مبنية على أساس تسهيل تدفق العمل workflow خلال تطوير أي منتج ونشر الميزات
-					بسرعة وحل المشاكل التي تحدث بدون التأثير على الخدمات الأخرى أو مقاطعتها، فالوقت عامل أساسي في أي عملية تطوير
-					برمجي software development process.
-					ومن ضمن الفوائد الأخرى أيضًا بخلاف التسليم السريع Rapid Delivery السابق ذكره هو أن جودة التطبيق والتغييرات
-					التي تحدث في البنية التحتية ستكون أفضل والاستقرار سيصبح أكبر بكثير جدًا وستوجد الآلاف من السيرفرات في أمكان
-					كثيرة متباعدة عن بعضها البعض.
-					وعندما نستريح من هذه الأعباء ونستبدلها بالـ automation سيوفر وقت كبير للشركات لأجل التركيز على الـ business.
-					معظم التطبيقات حاليًا تستخدم public/private clouds والـ Devops يساعد البنية التحتية في إنهاء عملياتها بسهولة
-					عن طريق الـ automation.
-					بمعني أن العمليات التي كانت بطيئة قبلاً وكانت يدوية manual أصبحت آلية automated.
-					والمواقع التي الـ traffic الخاص بها كبير جدًا مثل جوجل، FB، Amazon … إلخ يحتاجون للنشر deployment عدة مرات كل
-					ساعة أو كل دقيقة تقريبًا ولتتم المعالجة handling لهذا الرقم الكبير كل فترة صغيرة فالموضوع يحتاج شيء سريع جدًا
-					وهنا دور الـ devops.
-					حاليًا أغلب الشركات بدأت تتطبق الـ devops والفكرة في تطبيق الـ devops هنا ليست مقتصرة على حجم الشركة كبيرة أو
-					العكس، والدليل أنه يوجد lean startups تطبق الـ devops.
-					أهم المهارات skills الواجب توافرها في الـ DevOps Engineer:
-					1- يستطيع بالطبع كتابة كود script.
-					2- لا بد أن يكون عنده القدرة على استخدام الأدوات والتقنيات الخاصة بالمصادر المفتوحة open source.
-					3- خبرة في التعامل مع النظام system والعمل بشكل مسبق في IT operations Team.
-					4- تطوير software projects باستخدام استراتيجية تدريجية incremental strategy ويكون له علم بمرحلة اختبار الكود
-					code testing ونشره code deployment.
-					5- معرفة بكيفية استخدام الـ automation tools.
-					6- بالإضافة لمهارات التواصل والتعاون مع الآخرين والبحث research.
-					7- تركيز قوي على مرحلة الـ business أكثر من التركيز على بناء التقنية من الصفر technology from scratch
-					والاهتمام بعمل automation لها وهذا هو الهدف من البداية لاستخدام الـ Devops.
-					8- يكون عنده معرفة جيدة في إدراة البيانات وتحليلها Data management and analysis.
-					وهذا هو الـ DevOps Engineer وشكله، كيف أبدأ في هذا الطريق؟
-					أول شيء هو أن تبدأ بتحسين مهارات الكود coding skills الخاصة بك وبعدها تبدأ تتعرف وتكون ملِّم باستخدام الـ
-					automation tools، وخارج التطوير في المستوى الـ technical ستبدأ بتحسين المهارات البسيطة soft skills وتبحث عن
-					فرص تتعامل وتتعاون خارج نطاق الفريق الذي تعمل معه.
-					تساعد الشركة بالتطور وتنهي الـ deployment والـ test أسرع وتبدأ تتقبل الاستماع لأفكار الآخرين لأن الـ DevOps
-					ليست عبارة عن إنجاز الحاجة بشكل معين specific إنما المرونة flexibility يجب أن تكون عالية لأجل تحسين الـ
-					business والاستفادة من مميزات التقنيات technologies بشكل أكبر.
-				</p>
+				<p><%= article.content %></p>
 
 				<!-- Tags of article -->
 				<p class="tags">
 					Tags:
-					<span> <a href="/Articles"> Software </a> </span>
-					<span> <a href="/Articles"> Technology </a> </span>
+					<% article.tags.forEach(tag => { %>
+						<span> <a href="/Articles"> <%= tag %> </a> </span>
+					<% }) %>
 				</p>
 			</section>
 
-			<!-- Author of article-->
+			<%# Author of article %>
 			<section class="author">
-				<img src="/public/Images/user.png" alt="Author of this article" class="img-responsive">
+				<img src="/<%= member.imageUrl %>" alt="<%= member.name %> Author of this article" class="img-responsive">
 				<div class="info">
-					<h3> <a href="/MemberArticles"> Aya Elawdan </a></h3>
-					<p>Computer Science student</p>
+					<h3> <a href="/MemberArticles/<%= member._id %>"> <%= member.name %> </a></h3>
+					<p><%= member.team %></p>
 				</div>
 			</section>
 

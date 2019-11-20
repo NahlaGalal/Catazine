@@ -19,8 +19,11 @@ const Article = new Schema({
     type: String,
     required: true
   },
-  userId: {
-    type: Schema.Types.ObjectId,
+  user: {
+    type: {
+      userId: Schema.Types.ObjectId,
+      name: String
+    },
     required: true,
     ref: "users"
   },
@@ -32,6 +35,6 @@ const Article = new Schema({
     type: [Schema.Types.ObjectId],
     ref: "comment"
   }
-})
+});
 
 module.exports = mongoose.model("article", Article);

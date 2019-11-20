@@ -8,6 +8,6 @@ router.get("/", articlesControllers.getHome);
 
 router.get("/Articles", articlesControllers.getArticles);
 
-router.get("/Article", articlesControllers.getArticle);
+router.get("/Article/:articleId", articlesControllers.getArticle);
 
 module.exports = router;

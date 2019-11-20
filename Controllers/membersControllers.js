@@ -1,6 +1,8 @@
 const User = require("../Models/Users");
 const Article = require("../Models/articles");
 
+const mongoose = require("mongoose");
+
 const arMonthes = [
   "يناير",
   "فبراير",
@@ -44,12 +46,13 @@ exports.getMemberArticles = (req, res, next) => {
   const MAX_ARTICLES = 3;
   const userId = req.params.userId;
   const page = +req.query.page || 1;
-  let numArticles, userArticles = [];
-  Article.find({ userId })
+  let numArticles,
+    userArticles = [];
+  Article.find({ "user.userId": mongoose.Types.ObjectId(userId) })
     .countDocuments()
     .then(num => {
       numArticles = num;
-      return Article.find({ userId })
+      return Article.find({ "user.userId": mongoose.Types.ObjectId(userId) })
         .skip((page - 1) * MAX_ARTICLES)
         .limit(MAX_ARTICLES);
     })
@@ -58,7 +61,10 @@ exports.getMemberArticles = (req, res, next) => {
         const arMonth = arMonthes[article.date.getMonth()];
         const day = article.date.getDate();
         const year = article.date.getFullYear();
-        userArticles.push({...article._doc, date: `${day} ${arMonth} ${year}`});
+        userArticles.push({
+          ...article._doc,
+          date: `${day} ${arMonth} ${year}`
+        });
       });
       return User.findById(userId);
     })
