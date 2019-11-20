@@ -1,9 +1,24 @@
 const User = require("../Models/Users");
 const Article = require("../Models/articles");
 
+const arMonthes = [
+  "يناير",
+  "فبراير",
+  "مارس",
+  "أبريل",
+  "مايو",
+  "يونيو",
+  "يوليو",
+  "أغسطس",
+  "سبتمبر",
+  "أكتوبر",
+  "نوفمبر",
+  "ديسمير"
+];
+
 exports.getMembers = (req, res, next) => {
   const MAX_USER = 6;
-  let numMembers;
+  let numMembers, members;
   const page = +req.query.page || 1;
   User.find()
     .countDocuments()
@@ -13,7 +28,8 @@ exports.getMembers = (req, res, next) => {
         .skip((page - 1) * MAX_USER)
         .limit(MAX_USER);
     })
-    .then(members => {
+    .then(users => {
+      members = users;
       res.render("Members", {
         title: "Members",
         docType: "/members",
@@ -28,7 +44,7 @@ exports.getMemberArticles = (req, res, next) => {
   const MAX_ARTICLES = 3;
   const userId = req.params.userId;
   const page = +req.query.page || 1;
-  let numArticles, userArticles;
+  let numArticles, userArticles = [];
   Article.find({ userId })
     .countDocuments()
     .then(num => {
@@ -38,7 +54,12 @@ exports.getMemberArticles = (req, res, next) => {
         .limit(MAX_ARTICLES);
     })
     .then(articles => {
-      userArticles = articles;
+      articles.forEach(article => {
+        const arMonth = arMonthes[article.date.getMonth()];
+        const day = article.date.getDate();
+        const year = article.date.getFullYear();
+        userArticles.push({...article._doc, date: `${day} ${arMonth} ${year}`});
+      });
       return User.findById(userId);
     })
     .then(member => {
@@ -50,5 +71,6 @@ exports.getMemberArticles = (req, res, next) => {
         lastPage: Math.ceil(numArticles / MAX_ARTICLES),
         articles: userArticles
       });
-    }).catch(err => console.log(err))
+    })
+    .catch(err => console.log(err));
 };
