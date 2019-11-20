@@ -59,7 +59,7 @@ exports.postSignup = (req, res, next) => {
         mail,
         password: hashedPassword,
         imageUrl,
-        team: "Developer",
+        team: "فريق التصميم",
         facebook,
         twitter,
         google

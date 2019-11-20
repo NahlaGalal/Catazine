@@ -6,6 +6,10 @@ const Article = new Schema({
     type: String,
     required: true
   },
+  imageUrl: {
+    type: String,
+    required: true
+  },
   content: {
     type: String,
     raquired: true

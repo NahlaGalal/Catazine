@@ -7,7 +7,7 @@
   <main class="container">
     <%= errorMessage %>
     <form action="/signup" method="POST" novalidate enctype="multipart/form-data">
-      <input type="text" name="name" id="name" placeholder="الإسم باللغة العربية*" value="<%= oldInput.name %>"
+      <input type="text" name="name" id="name" placeholder="الإسم*" value="<%= oldInput.name %>"
         class="<%if(errorInput === "name") {%>unvalid<% } %>">
       <input type="email" name="mail" id="mail" placeholder="البريد الإلكتروني*" value="<%= oldInput.mail %>"
         class="<%if(errorInput === "mail") {%>unvalid<% } %>">

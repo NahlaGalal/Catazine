@@ -7,163 +7,56 @@
 	</header>
 	<main>
 		<div class="container members">
+			<% members.forEach(member => { %>
 			<section>
-				<img src="/public/Images/user.png" alt="Nahla Galal image" class="img-circle img-responsive">
-				<h1>Nahla Galal</h1>
-				<p>فريق التصميم</p>
+				<img src="<%= member.imageUrl %>" alt="<%= member.name %> profile image" class="img-circle img-responsive">
+				<h1><%= member.name %></h1>
+				<p><%= member.team %></p>
 				<div class="info">
-					<p><i class="fas fa-pen"></i><span>Posts created: </span> 25</p>
-					<p><i class="far fa-comment"></i><span> Comments: </span> 25</p>
+					<p><i class="fas fa-pen"></i><span>Posts created: </span> <%= member.articles.length %></p>
+					<p><i class="far fa-comment"></i><span> Comments: </span> <%= member.numComments %></p>
 				</div>
 				<div class="dropdown">
 					<a href="#" id="dlabel" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="true"> المقالات <span class="caret"></span> </a>
 
 					<ul class="dropdown-menu" aria-labelledby="dlabel">
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/Article">What is DevOps</a></li>
+						<% if (member.articles.length) { %>
+						<% member.articles.forEach((article, i) => { %>
+						<% if (i < 3) { %>
+						<li><a href="/article/<%= article._id %>"><%= article.header %></a></li>
+						<% } else if (i === 3) {%>
 						<li><a href="/MemberArticles">المزيد من المقالات</a></li>
+						<% } %>
+						<% }) %>
+						<% } else { %>
+						<li>لا توجد أية مقالات بعد</li>
+						<% } %>
 					</ul>
 				</div>
 				<ul>
-					<li><a href="https://www.facbook.com"><img src="/public/Images/facebook.svg" alt="Facbook link"></a></li>
-					<li><a href="https://www.twitter.com"><img src="/public/Images/twitter.svg" alt="Twitter link"></a></li>
-					<li><a href="https://www.google.com"><img src="/public/Images/google+.svg" alt="Google+ account"></a></li>
+					<li><a href="<%= member.facebook %>"><img src="/public/Images/facebook.svg" alt="Facbook link"></a></li>
+					<li><a href="<%= member.twitter %>"><img src="/public/Images/twitter.svg" alt="Twitter link"></a></li>
+					<li><a href="<%= member.google %>"><img src="/public/Images/google+.svg" alt="Google+ account"></a></li>
 				</ul>
 			</section>
-			<section>
-				<img src="/public/Images/user.png" alt="Nahla Galal image" class="img-circle img-responsive">
-				<h1>Nahla Galal</h1>
-				<p>فريق التصميم</p>
-				<div class="info">
-					<p><i class="fas fa-pen"></i><span>Posts created: </span> 25</p>
-					<p><i class="far fa-comment"></i><span> Comments: </span> 25</p>
-				</div>
-				<div class="dropdown">
-					<a href="#" id="dlabel2" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="true"> المقالات <span class="caret"></span> </a>
-
-					<ul class="dropdown-menu" aria-labelledby="dlabel2">
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/MemberArticles">المزيد من المقالات</a></li>
-					</ul>
-				</div>
-				<ul>
-					<li><a href="https://www.facbook.com"><img src="/public/Images/facebook.svg" alt="Facbook link"></a></li>
-					<li><a href="https://www.twitter.com"><img src="/public/Images/twitter.svg" alt="Twitter link"></a></li>
-					<li><a href="https://www.google.com"><img src="/public/Images/google+.svg" alt="Google+ account"></a></li>
-				</ul>
-			</section>
-			<section>
-				<img src="/public/Images/user.png" alt="Nahla Galal image" class="img-circle img-responsive">
-				<h1>Nahla Galal</h1>
-				<p>فريق التصميم</p>
-				<div class="info">
-					<p><i class="fas fa-pen"></i><span>Posts created: </span> 25</p>
-					<p><i class="far fa-comment"></i><span> Comments: </span> 25</p>
-				</div>
-				<div class="dropdown">
-					<a href="#" id="dlabel3" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="true"> المقالات <span class="caret"></span> </a>
-
-					<ul class="dropdown-menu" aria-labelledby="dlabel3">
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/MemberArticles">المزيد من المقالات</a></li>
-					</ul>
-				</div>
-				<ul>
-					<li><a href="https://www.facbook.com"><img src="/public/Images/facebook.svg" alt="Facbook link"></a></li>
-					<li><a href="https://www.twitter.com"><img src="/public/Images/twitter.svg" alt="Twitter link"></a></li>
-					<li><a href="https://www.google.com"><img src="/public/Images/google+.svg" alt="Google+ account"></a></li>
-				</ul>
-			</section>
-			<section>
-				<img src="/public/Images/user.png" alt="Nahla Galal image" class="img-circle img-responsive">
-				<h1>Nahla Galal</h1>
-				<p>فريق التصميم</p>
-				<div class="info">
-					<p><i class="fas fa-pen"></i><span>Posts created: </span> 25</p>
-					<p><i class="far fa-comment"></i><span> Comments: </span> 25</p>
-				</div>
-				<div class="dropdown">
-					<a href="#" id="dlabel4" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="true"> المقالات <span class="caret"></span> </a>
-
-					<ul class="dropdown-menu" aria-labelledby="dlabel4">
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/MemberArticles">المزيد من المقالات</a></li>
-					</ul>
-				</div>
-				<ul>
-					<li><a href="https://www.facebook.com"><img src="/public/Images/facebook.svg" alt="Facbook link"></a></li>
-					<li><a href="https://www.twitter.com"><img src="/public/Images/twitter.svg" alt="Twitter link"></a></li>
-					<li><a href="https://www.google.com"><img src="/public/Images/google+.svg" alt="Google+ account"></a></li>
-				</ul>
-			</section>
-			<section>
-				<img src="/public/Images/user.png" alt="Nahla Galal image" class="img-circle img-responsive">
-				<h1>Nahla Galal</h1>
-				<p>فريق التصميم</p>
-				<div class="info">
-					<p><i class="fas fa-pen"></i><span>Posts created: </span> 25</p>
-					<p><i class="far fa-comment"></i><span> Comments: </span> 25</p>
-				</div>
-				<div class="dropdown">
-					<a href="#" id="dlabel5" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="true"> المقالات <span class="caret"></span> </a>
-
-					<ul class="dropdown-menu" aria-labelledby="dlabel5">
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/MemberArticles">المزيد من المقالات</a></li>
-					</ul>
-				</div>
-				<ul>
-					<li><a href="https://www.facebook.com"><img src="/public/Images/facebook.svg" alt="Facbook link"></a></li>
-					<li><a href="https://www.twitter.com"><img src="/public/Images/twitter.svg" alt="Twitter link"></a></li>
-					<li><a href="https://www.google.com"><img src="/public/Images/google+.svg" alt="Google+ account"></a></li>
-				</ul>
-			</section>
-			<section>
-				<img src="/public/Images/user.png" alt="Nahla Galal image" class="img-circle img-responsive">
-				<h1>Nahla Galal</h1>
-				<p>فريق التصميم</p>
-				<div class="info">
-					<p><i class="fas fa-pen"></i><span>Posts created: </span> 25</p>
-					<p><i class="far fa-comment"></i><span> Comments: </span> 25</p>
-				</div>
-				<div class="dropdown">
-					<a href="#" id="dlabel6" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="true"> المقالات <span class="caret"></span> </a>
-
-					<ul class="dropdown-menu" aria-labelledby="dlabel6">
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/Article">What is DevOps</a></li>
-						<li><a href="/MemberArticles">المزيد من المقالات</a></li>
-					</ul>
-				</div>
-				<ul>
-					<li><a href="https://www.facebook.com"><img src="/public/Images/facebook.svg" alt="Facbook link"></a></li>
-					<li><a href="https://www.twitter.com"><img src="/public/Images/twitter.svg" alt="Twitter link"></a></li>
-					<li><a href="https://www.google.com"><img src="/public/Images/google+.svg" alt="Google+ account"></a></li>
-				</ul>
-			</section>
+			<% }) %>
 		</div>
 
 		<div class="container curPage">
 			<p>
-				<span class="page">1</span> of <span id="numPages">3</span>
-				<a href="#"><i class="fas fa-angle-double-left"></i></a> <span class="page"> 1 </span> <a href="#"><i
-						class="fas fa-angle-double-right"></i></a>
+				<span class="page"><%= currentPage %></span> of <span id="numPages"><%= lastPage %></span>
+				<% if (currentPage !== 1) { %>
+					<a href="?page=<%=currentPage-1%>"><i class="fas fa-angle-double-left"></i></a> 
+				<% } else { %>
+					<i class="fas fa-angle-double-left"></i>
+				<% } %>
+				<span class="page"> <%= currentPage %> </span>
+				<% if (currentPage !== lastPage) { %>
+					<a href="?page=<%=currentPage+1%>"><i class="fas fa-angle-double-right"></i></a>
+				<% } else { %>
+					<i class="fas fa-angle-double-right"></i>
+				<% } %>
 			</p>
 		</div>
 	</main>

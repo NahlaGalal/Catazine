@@ -9,6 +9,8 @@ const flash = require("connect-flash");
 // Routes
 const userRoutes = require("./routes/userRoutes");
 const articlesRoutes = require("./routes/articlesRoutes");
+const membersRoutes = require("./routes/membersRoutes");
+const generalRoutes = require("./routes/generalRoutes");
 // Models
 const User = require("./Models/Users");
 
@@ -79,10 +81,13 @@ app.use(flash());
 
 // Static files
 app.use("/public", express.static("./public"));
+app.use("/userImages", express.static("./userImages"));
 
 // Routes
 app.use(userRoutes);
 app.use(articlesRoutes);
+app.use(membersRoutes);
+app.use(generalRoutes);
 
 mongoose
   .connect(MONGODB_URL, { useNewUrlParser: true })

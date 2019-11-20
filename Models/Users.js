@@ -39,6 +39,10 @@ const Users = new Schema({
 	articles: {
 		type: [Schema.Types.ObjectId],
 		ref: "Article"
+	},
+	numComments: {
+		type: Number,
+		default: 0
 	}
 });
 
