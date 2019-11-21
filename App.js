@@ -23,7 +23,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Image upload
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, "userImages"),
+  destination: (req, file, cb) => {
+    if(file.fieldname === "Image")
+      return cb(null, "userImages");
+    else
+      return cb(null, "articleImages")
+  },
   filename: (req, file, cb) =>
     cb(
       null,
@@ -39,13 +44,14 @@ const fileFilter = (req, file, cb) => {
     cb(null, true);
   else cb(null, false);
 };
-app.use(multer({ storage, fileFilter }).single("image"));
+// app.use(multer({ storage, fileFilter }).single("articleImage"));
+app.use(multer({ storage, fileFilter }).fields([{name: "image"}, {name: "articleImage"}]));
 
 // Sessions
 const store = new MongoDBStore({
   uri: MONGODB_URL,
   collection: "sessions"
-})
+});
 app.use(
   session({
     secret: "my secret",
@@ -82,6 +88,7 @@ app.use(flash());
 // Static files
 app.use("/public", express.static("./public"));
 app.use("/userImages", express.static("./userImages"));
+app.use("/articleImages", express.static("./articleImages"));
 
 // Routes
 app.use(userRoutes);
@@ -93,3 +100,11 @@ mongoose
   .connect(MONGODB_URL, { useNewUrlParser: true })
   .then(() => app.listen("3000"))
   .catch(err => console.log(err));
+
+// TODO: Forms ==> Add comment, add article, edit them
+// TODO: Categories and tags pages
+// TODO: User navbar
+// TODO: Carousel
+// TODO: Control size of content in articles
+// TODO: Images in articles
+// TODO: control comments of members or hosts

@@ -17,7 +17,8 @@ const Article = new Schema({
   tags: [String],
   category: {
     type: String,
-    required: true
+    required: true,
+    ref: "category"
   },
   user: {
     type: {
