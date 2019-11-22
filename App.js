@@ -101,10 +101,11 @@ mongoose
   .then(() => app.listen("3000"))
   .catch(err => console.log(err));
 
-// TODO: Forms ==> Add comment, add article, edit them
+// TODO: Forms ==> Add comment, edit them
 // TODO: Categories and tags pages
 // TODO: User navbar
 // TODO: Carousel
 // TODO: Control size of content in articles
 // TODO: Images in articles
 // TODO: control comments of members or hosts
+// TODO: Select month in Articles view
