@@ -70,7 +70,7 @@ exports.getMemberArticles = (req, res, next) => {
     })
     .then(member => {
       res.render("MemberArticles", {
-        title: "Member article",
+        title: `${member.name} Articles`,
         docType: "",
         member,
         currentPage: page,

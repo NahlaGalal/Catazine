@@ -85,7 +85,7 @@ exports.getArticle = (req, res, next) => {
     })
     .then(allCategories => {
       res.render("Article", {
-        title: "Article",
+        title: userArticle.header,
         docType: "",
         article: userArticle,
         member,
