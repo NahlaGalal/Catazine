@@ -4,7 +4,7 @@
 
 <body>
 	<%- include('./includes/header.ejs') %>
-	<!-- Main -->
+	<%# Main %>
 	<div class="container body">
 		<main>
 			<h1><%= article.header %></h1>
@@ -16,11 +16,11 @@
 				<span> <i class="far fa-comment"></i> <%= article.comments.length %> تعليقات</span>
 			</p>
 
-			<!-- Article -->
+			<%# Article %>
 			<section>
 				<p><%= article.content %></p>
 
-				<!-- Tags of article -->
+				<%# Tags of article %>
 				<p class="tags">
 					Tags:
 					<% article.tags.forEach(tag => { %>
@@ -38,7 +38,7 @@
 				</div>
 			</section>
 
-			<!-- Comments -->
+			<%# Comments %>
 			<section class="comments">
 				<h2>Comments</h2>
 				<div>
@@ -64,26 +64,28 @@
 
 		</main>
 
-		<!-- Aside -->
+		<%# Aside %>
 		<aside>
-			<!-- Categories -->
+			<%# Categories %>
 			<%- include('./includes/categories.ejs') %> 
 
-			<!-- Tags -->
+			<%# Tags %>
 			<%- include('./includes/tags.ejs') %> 
 
-			<!-- Subsription -->
+			<%# Subsription %>
 			<form>
 				<h2>Subsription</h2>
-				<input type="text" name="Name" id="subName" placeholder="الاسم">
-				<input type="email" name="Mail" id="subMail" placeholder="البريد الإلكتروني*" required>
-				<input type="submit" value="Submit" class="btn btn-primary">
+				<form action="/subsribe" method="POST">
+					<input type="text" name="Name" id="subName" placeholder="الاسم">
+					<input type="email" name="Mail" id="subMail" placeholder="البريد الإلكتروني*" required>
+					<input type="submit" value="Submit" class="btn btn-primary">	
+				</form>
 			</form>
 
 		</aside>
 	</div>
 
-	<!-- Leave Comment -->
+	<%# Leave Comment %>
 	<form class="container">
 		<h2>Leave a reply</h2>
 		<p>Your email address will not be published. Required fields are marked *</p>

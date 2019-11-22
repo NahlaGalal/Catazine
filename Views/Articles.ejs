@@ -7,7 +7,7 @@
 	<%- include('./includes/header.ejs') %>
 	<main class="container">
 
-		<!-- Select Month -->
+		<%# Select Month %>
 		<div class="archive">
 			<h2>الأرشيف</h2>
 			<select name="Archive">
@@ -77,7 +77,7 @@
 			</select>
 		</div>
 
-		<!-- Articles -->
+		<%# Articles %>
 		<div class="articles">
 			<% articles.forEach(article => { %>
 				<section>
@@ -91,84 +91,22 @@
 					</div>
 				</section>
 			<% }) %>
-			<section>
-				<img src="/public/Images/Dev-ops.png" alt="DevOps article" class="img-responsive img-rounded">
-				<h2>What is DevOps</h2>
-				<p>
-					مصطلح جديد غير مألوف للبعض، ما هو؟ هل هو تكنولوجيا Technology أم عملية process أم عنوان وظيفة أم فلسفة؟ كمصطلح
-					ظهر في عام 2006 عن طريق شخص اسمه Patrick Debois. والـ devops ببساطة هو عبارة عن دمج ما بين حاجتين كما هو واضح
-					من اسمه ألا وهما: software development and operations. يجمع تخصصين مهمين ويضمن أن التواصل بين المطور...
-				</p>
-				<a href="/Article">استكمال القراءة</a>
-				<div class="category">
-					<p> <a href="#"> <i class="fas fa-tags"></i> Programming </a> </p>
-					<p> <a href="#"> <i class="fas fa-user"></i>Aya Elawdan </a> </p>
-				</div>
-			</section>
-			<section>
-				<img src="/public/Images/Dev-ops.png" alt="DevOps article" class="img-responsive img-rounded">
-				<h2>What is DevOps</h2>
-				<p>
-					مصطلح جديد غير مألوف للبعض، ما هو؟ هل هو تكنولوجيا Technology أم عملية process أم عنوان وظيفة أم فلسفة؟ كمصطلح
-					ظهر في عام 2006 عن طريق شخص اسمه Patrick Debois. والـ devops ببساطة هو عبارة عن دمج ما بين حاجتين كما هو واضح
-					من اسمه ألا وهما: software development and operations. يجمع تخصصين مهمين ويضمن أن التواصل بين المطور...
-				</p>
-				<a href="/Article">استكمال القراءة</a>
-				<div class="category">
-					<p> <a href="#"> <i class="fas fa-tags"></i> Programming </a> </p>
-					<p> <a href="#"> <i class="fas fa-user"></i>Aya Elawdan </a> </p>
-				</div>
-			</section>
-			<section>
-				<img src="/public/Images/Dev-ops.png" alt="DevOps article" class="img-responsive img-rounded">
-				<h2>What is DevOps</h2>
-				<p>
-					مصطلح جديد غير مألوف للبعض، ما هو؟ هل هو تكنولوجيا Technology أم عملية process أم عنوان وظيفة أم فلسفة؟ كمصطلح
-					ظهر في عام 2006 عن طريق شخص اسمه Patrick Debois. والـ devops ببساطة هو عبارة عن دمج ما بين حاجتين كما هو واضح
-					من اسمه ألا وهما: software development and operations. يجمع تخصصين مهمين ويضمن أن التواصل بين المطور...
-				</p>
-				<a href="/Article">استكمال القراءة</a>
-				<div class="category">
-					<p> <a href="#"> <i class="fas fa-tags"></i> Programming </a> </p>
-					<p> <a href="#"> <i class="fas fa-user"></i>Aya Elawdan </a> </p>
-				</div>
-			</section>
-			<section>
-				<img src="/public/Images/Dev-ops.png" alt="DevOps article" class="img-responsive img-rounded">
-				<h2>What is DevOps</h2>
-				<p>
-					مصطلح جديد غير مألوف للبعض، ما هو؟ هل هو تكنولوجيا Technology أم عملية process أم عنوان وظيفة أم فلسفة؟ كمصطلح
-					ظهر في عام 2006 عن طريق شخص اسمه Patrick Debois. والـ devops ببساطة هو عبارة عن دمج ما بين حاجتين كما هو واضح
-					من اسمه ألا وهما: software development and operations. يجمع تخصصين مهمين ويضمن أن التواصل بين المطور...
-				</p>
-				<a href="/Article">استكمال القراءة</a>
-				<div class="category">
-					<p> <a href="#"> <i class="fas fa-tags"></i> Programming </a> </p>
-					<p> <a href="#"> <i class="fas fa-user"></i>Aya Elawdan </a> </p>
-				</div>
-			</section>
-			<section>
-				<img src="/public/Images/Dev-ops.png" alt="DevOps article" class="img-responsive img-rounded">
-				<h2>What is DevOps</h2>
-				<p>
-					مصطلح جديد غير مألوف للبعض، ما هو؟ هل هو تكنولوجيا Technology أم عملية process أم عنوان وظيفة أم فلسفة؟ كمصطلح
-					ظهر في عام 2006 عن طريق شخص اسمه Patrick Debois. والـ devops ببساطة هو عبارة عن دمج ما بين حاجتين كما هو واضح
-					من اسمه ألا وهما: software development and operations. يجمع تخصصين مهمين ويضمن أن التواصل بين المطور...
-				</p>
-				<a href="/Article">استكمال القراءة</a>
-				<div class="category">
-					<p> <a href="#"> <i class="fas fa-tags"></i> Programming </a> </p>
-					<p> <a href="#"> <i class="fas fa-user"></i>Aya Elawdan </a> </p>
-				</div>
-			</section>
 		</div>
-
-		<!-- Pages -->
+		
 		<div class="container curPage">
 			<p>
-				<span class="page">1</span> of <span id="numPages">3</span>
-				<a href="#"><i class="fas fa-angle-double-left"></i></a> <span class="page"> 1 </span> <a href="#"><i
-						class="fas fa-angle-double-right"></i></a>
+				<span class="page"><%= currentPage %></span> of <span id="numPages"><%= lastPage %></span>
+				<% if (currentPage !== 1) { %>
+				<a href="?page=<%=currentPage-1%>"><i class="fas fa-angle-double-left"></i></a>
+				<% } else { %>
+				<i class="fas fa-angle-double-left"></i>
+				<% } %>
+				<span class="page"> <%= currentPage %> </span>
+				<% if (currentPage !== lastPage) { %>
+				<a href="?page=<%=currentPage+1%>"><i class="fas fa-angle-double-right"></i></a>
+				<% } else { %>
+				<i class="fas fa-angle-double-right"></i>
+				<% } %>
 			</p>
 		</div>
 	</main>
