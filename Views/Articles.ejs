@@ -81,7 +81,7 @@
 		<div class="articles">
 			<% articles.forEach(article => { %>
 				<section>
-					<img src="<%= article.imageUrl %>" alt="<%= article.header %> article" class="img-responsive img-rounded">
+					<img src="/<%= article.imageUrl %>" alt="<%= article.header %> article" class="img-responsive img-rounded">
 					<h2><%= article.header %></h2>
 					<p><%= article.content %></p>
 					<a href="/Article/<%= article._id %>">استكمال القراءة</a>

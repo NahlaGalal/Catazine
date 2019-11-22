@@ -12,30 +12,16 @@
 			<li data-target="#slide" data-slide-to="2"></li>
 		</ol>
 		<div class="carousel-inner" role="listbox">
-			<div class="item active">
-				<img src="/public/Images/Dev-ops.png" alt="DevOps article" class="img-responsive">
-				<div class="carousel-caption">
-					<p> <i class="far fa-calendar-alt"></i> 7 مارس 2017</p>
-					<h2>What is DevOps</h2>
-					<a href="/Article">أقرأ المزيد</a>
+			<% articles.forEach((article, i) => { %>
+				<div class="item <% if(!i) { %>active<% } %>">
+					<img src="/<%= article.imageUrl %>" alt="<%= article.header %> article" class="img-responsive">
+					<div class="carousel-caption">
+						<p> <i class="far fa-calendar-alt"></i> <%= article.day %> <%= article.month %> <%= article.year %></p>
+						<h2><%= article.header %></h2>
+						<a href="/Article/<%= article._id %>">أقرأ المزيد</a>
+					</div>
 				</div>
-			</div>
-			<div class="item">
-				<img src="/public/Images/Bio.png" alt="Bioinformatics article" class="img-responsive">
-				<div class="carousel-caption">
-					<p> <i class="far fa-calendar-alt"></i> 15 سبتمبر 2016</p>
-					<h2>علم الBioinformatics من الثروة المعلوماتية إلى الثروة الجينية</h2>
-					<a href="/Article">أقرأ المزيد</a>
-				</div>
-			</div>
-			<div class="item">
-				<img src="/public/Images/regex.png" alt="Regex article" class="img-responsive">
-				<div class="carousel-caption">
-					<p> <i class="far fa-calendar-alt"></i> 15 سبتمبر 2016</p>
-					<h2>REGULAR EXPRESSION مقدمة إلى التعابير النمطية</h2>
-					<a href="/Article">أقرأ المزيد</a>
-				</div>
-			</div>
+			<% }) %>
 		</div>
 		<a class="left carousel-control" href="#slide" role="button" data-slide="prev">
 			<span class="icon-prev"></span>
@@ -69,10 +55,10 @@
 					<img src="/<%= article.imageUrl %>" alt="<%= article.header %> article" class="img-responsive">
 					<h2><%= article.header %></h2>
 					<p>
-						<a href="#">
+						<a href="/category/<%= article.category %>">
 							<span class="tag"><i class="fas fa-tags"></i> <%= article.category %></span>
 						</a>
-						<a href="#">
+						<a href="/MemberArticles/<%= article.user.userId %>">
 							<i class="fas fa-user"></i><%= article.user.name %>
 						</a>
 					</p>

@@ -15,4 +15,8 @@ router.get("/add-article", isAuth, articlesControllers.getAddArticle);
 
 router.post("/add-article", isAuth, articlesControllers.postAddArticle);
 
+router.get("/category/:name", articlesControllers.getCategoryArticles);
+
+router.get("/tag/:name", articlesControllers.getTagArticles);
+
 module.exports = router;

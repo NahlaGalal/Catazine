@@ -162,3 +162,47 @@ exports.postAddArticle = (req, res, next) => {
     .then(() => res.redirect("/"))
     .catch(err => console.log(err));
 };
+
+exports.getCategoryArticles = (req, res, next) => {
+  const categoryName = req.params.name;
+  const MAX_ARTICLES = 3;
+  const page = +req.query.page || 1;
+  let numArticles;
+  Category.findOne({ name: categoryName })
+    .then(category => {
+      return Article.find({ _id: { $in: category.articles } });
+    })
+    .then(articles => {
+      numArticles = articles.length;
+      res.render("Articles", {
+        title: `${categoryName} category`,
+        docType: "",
+        articles: articles.slice((page - 1) * MAX_ARTICLES, page * MAX_ARTICLES),
+        currentPage: page,
+        lastPage: Math.ceil(numArticles / MAX_ARTICLES)
+      });
+    })
+    .catch(err => console.log(err));
+};
+
+exports.getTagArticles = (req, res, next) => {
+  const tagName = req.params.name;
+  const MAX_ARTICLES = 3;
+  const page = +req.query.page || 1;
+  let numArticles;
+  Tag.findOne({ name: tagName })
+    .then(tag => {
+      return Article.find({ _id: { $in: tag.articles } });
+    })
+    .then(articles => {
+      numArticles = articles.length;
+      res.render("Articles", {
+        title: `${tagName} tag`,
+        docType: "",
+        articles: articles.slice((page - 1) * MAX_ARTICLES, page * MAX_ARTICLES),
+        currentPage: page,
+        lastPage: Math.ceil(numArticles / MAX_ARTICLES)
+      });
+    })
+    .catch(err => console.log(err));
+};

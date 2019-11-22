@@ -35,8 +35,8 @@
 					</p>
 					<a href="/Article/<%= article._id %>"> اقرأ المزيد </a>
 					<div class="category">
-						<p><a href="#"><i class="fas fa-tags"></i> <%= article.category %> </a></p>
-						<p><a href="#"><i class="far fa-calendar"></i> <%= article.date %></a></p>
+						<p><a href="/category/<%= article.category %>"><i class="fas fa-tags"></i> <%= article.category %> </a></p>
+						<p><i class="far fa-calendar"></i> <%= article.date %></p>
 					</div>
 				</section>
 			<% }) %>

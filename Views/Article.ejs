@@ -10,8 +10,8 @@
 			<h1><%= article.header %></h1>
 			<img src="/<%= article.imageUrl %>" alt="<%= article.header %> article" class="img-responsive">
 			<p>
-				<a href="/Articles"> <span class="tag"><i class="fas fa-tags"></i> <%= article.category %></span> </a>
-				<a href="/MemberArticles" class="articleWriter"> <i class="fas fa-user"></i> <%= article.user.name %> </a>
+				<a href="/category/<%= article.category %>"> <span class="tag"><i class="fas fa-tags"></i> <%= article.category %></span> </a>
+				<a href="/MemberArticles/<%= article.user.userId %>" class="articleWriter"> <i class="fas fa-user"></i> <%= article.user.name %> </a>
 				<span> <i class="far fa-calendar"></i> <%= article.date %></span>
 				<span> <i class="far fa-comment"></i> <%= article.comments.length %> تعليقات</span>
 			</p>
@@ -24,7 +24,7 @@
 				<p class="tags">
 					Tags:
 					<% article.tags.forEach(tag => { %>
-						<span> <a href="/Articles"> <%= tag %> </a> </span>
+						<span> <a href="/tag/<%= tag %>"> <%= tag %> </a> </span>
 					<% }) %>
 				</p>
 			</section>

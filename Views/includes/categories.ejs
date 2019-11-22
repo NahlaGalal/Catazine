@@ -2,7 +2,7 @@
   <h2>Categories</h2>
   <ul>
     <% for( let index = 0; index < 10; index++ ) { %>
-      <li><a href="#"> <%= categories[index].name %> (<%= categories[index].articles.length%>) </a></li>
+      <li><a href="/category/<%= categories[index].name %>"> <%= categories[index].name %> (<%= categories[index].articles.length%>) </a></li>
       <li class="hr">
         <hr>
       </li>
@@ -16,12 +16,11 @@
 
     <ul class="dropdown-menu" aria-labelledby="dlabel">
       <% for( let index = 11; index < categories.length - 1; index++ ) { %>
-      <li><a href="#"> <%= categories[index].name %> (<%= categories[index].articles.length%>) </a></li>
+      <li><a href="/category/<%= categories[index].name %>"> <%= categories[index].name %> (<%= categories[index].articles.length%>) </a></li>
       <li class="hr">
         <hr>
       </li>
       <% } %>
-      <li><a href="#"> النسخة الاسبوعية (5)</a></li>
     </ul>
   </div>
 </section>
