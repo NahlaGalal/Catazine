@@ -1,6 +1,7 @@
 const Article = require("../Models/articles");
 const User = require("../Models/Users");
 const Category = require("../Models/categories");
+const Tag = require("../Models/tags");
 
 const { categories, tags } = require("../util/categories_tags");
 
@@ -49,24 +50,38 @@ exports.getHome = (req, res, next) => {
     .catch(err => console.log(err));
 };
 
-exports.getArticles = (req, res, next) =>
-  Article.find().then(articles => {
-    let usersArticles = [];
-    articles.forEach(article => {
-      const arMonth = arMonthes[article.date.getMonth()];
-      const day = article.date.getDate();
-      const year = article.date.getFullYear();
-      usersArticles.push({
-        ...article._doc,
-        date: `${day} ${arMonth} ${year}`
+exports.getArticles = (req, res, next) => {
+  const MAX_ARTICLES = 3;
+  const page = +req.query.page || 1;
+  let numArticles;
+  Article.find()
+    .countDocuments()
+    .then(num => {
+      numArticles = num;
+      return Article.find()
+        .skip((page - 1) * MAX_ARTICLES)
+        .limit(MAX_ARTICLES);
+    })
+    .then(articles => {
+      let usersArticles = [];
+      articles.forEach(article => {
+        const arMonth = arMonthes[article.date.getMonth()];
+        const day = article.date.getDate();
+        const year = article.date.getFullYear();
+        usersArticles.push({
+          ...article._doc,
+          date: `${day} ${arMonth} ${year}`
+        });
+      });
+      res.render("Articles", {
+        title: "Articles",
+        docType: "/articles",
+        articles: usersArticles,
+        currentPage: page,
+        lastPage: Math.ceil(numArticles / MAX_ARTICLES)
       });
     });
-    res.render("Articles", {
-      title: "Articles",
-      docType: "/articles",
-      articles: usersArticles
-    });
-  });
+};
 
 exports.getArticle = (req, res, next) => {
   const { articleId } = req.params;
@@ -118,16 +133,32 @@ exports.postAddArticle = (req, res, next) => {
   });
   article
     .save()
-    .then(article => {
-      return User.findByIdAndUpdate(req.user._id, {
+    .then(article =>
+      User.findByIdAndUpdate(req.user._id, {
         $push: {
-          articles: 
-          {
+          articles: {
             _id: article._id,
             header
           }
-      }});
-    })
+        }
+      })
+    )
+    .then(() =>
+      Category.findOneAndUpdate(
+        { name: category },
+        {
+          $push: {
+            articles: article._id
+          }
+        }
+      )
+    )
+    .then(() =>
+      Tag.updateMany(
+        { name: { $in: tags } },
+        { $push: { articles: article._id } }
+      )
+    )
     .then(() => res.redirect("/"))
     .catch(err => console.log(err));
 };
