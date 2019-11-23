@@ -1,0 +1,7 @@
+node_modules/*
+Assets Folders/
+Css Folders/
+bower_components/
+gulpFile.js
+config.rb
+bower.json
