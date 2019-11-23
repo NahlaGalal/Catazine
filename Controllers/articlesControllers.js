@@ -127,7 +127,8 @@ exports.getArticle = (req, res, next) => {
         tags,
         categories: allCategories,
         comments: userComments,
-        commentAuthors
+        commentAuthors,
+        isAuthenticated: req.session.user ? true : false
       });
     })
     .catch(err => console.log(err));

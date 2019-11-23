@@ -10,8 +10,10 @@
 			<h1><%= article.header %></h1>
 			<img src="/<%= article.imageUrl %>" alt="<%= article.header %> article" class="img-responsive">
 			<p>
-				<a href="/category/<%= article.category %>"> <span class="tag"><i class="fas fa-tags"></i> <%= article.category %></span> </a>
-				<a href="/MemberArticles/<%= article.user.userId %>" class="articleWriter"> <i class="fas fa-user"></i> <%= article.user.name %> </a>
+				<a href="/category/<%= article.category %>"> <span class="tag"><i class="fas fa-tags"></i>
+						<%= article.category %></span> </a>
+				<a href="/MemberArticles/<%= article.user.userId %>" class="articleWriter"> <i class="fas fa-user"></i>
+					<%= article.user.name %> </a>
 				<span> <i class="far fa-calendar"></i> <%= article.date %></span>
 				<span> <i class="far fa-comment"></i> <%= article.comments.length %> تعليقات</span>
 			</p>
@@ -24,7 +26,7 @@
 				<p class="tags">
 					Tags:
 					<% article.tags.forEach(tag => { %>
-						<span> <a href="/tag/<%= tag %>"> <%= tag %> </a> </span>
+					<span> <a href="/tag/<%= tag %>"> <%= tag %> </a> </span>
 					<% }) %>
 				</p>
 			</section>
@@ -42,15 +44,15 @@
 			<section class="comments">
 				<h2>التعليقات</h2>
 				<% comments.forEach((comment, i) => { %>
-					<div>
-						<img src="/<%= commentAuthors[i].imageUrl %>" alt="<%= commentAuthors[i].name %> comment">
-						<div class="comment">
-							<h3> <a href="/MemberArticles/<%= commentAuthors[i]._id %>"> <%= commentAuthors[i].name %> </a></h3>
-							<p><%= comment.date.toString().split(" ").slice(0, 5).join(" ") %></p>
-							<p><%= comment.comment %></p>
-						</div>
+				<div>
+					<img src="/<%= commentAuthors[i].imageUrl %>" alt="<%= commentAuthors[i].name %> comment">
+					<div class="comment">
+						<h3> <a href="/MemberArticles/<%= commentAuthors[i]._id %>"> <%= commentAuthors[i].name %> </a></h3>
+						<p><%= comment.date.toString().split(" ").slice(0, 5).join(" ") %></p>
+						<p><%= comment.comment %></p>
 					</div>
-					<hr>
+				</div>
+				<hr>
 				<% }) %>
 			</section>
 
@@ -59,10 +61,10 @@
 		<%# Aside %>
 		<aside>
 			<%# Categories %>
-			<%- include('./includes/categories.ejs') %> 
+			<%- include('./includes/categories.ejs') %>
 
 			<%# Tags %>
-			<%- include('./includes/tags.ejs') %> 
+			<%- include('./includes/tags.ejs') %>
 
 			<%# Subsription %>
 			<form>
@@ -70,7 +72,7 @@
 				<form action="/subsribe" method="POST">
 					<input type="text" name="Name" id="subName" placeholder="الاسم">
 					<input type="email" name="Mail" id="subMail" placeholder="البريد الإلكتروني*" required>
-					<input type="submit" value="Submit" class="btn btn-primary">	
+					<input type="submit" value="Submit" class="btn btn-primary">
 				</form>
 			</form>
 
@@ -78,11 +80,12 @@
 	</div>
 
 	<%# Leave Comment %>
+	<% if (isAuthenticated) { %>
 	<form class="container" action="/add-comment/<%= article._id %>" method="POST">
 		<h2>اترك تعليق</h2>
 		<textarea name="comment" id="comment" placeholder="تعليق"></textarea>
 		<input type="hidden" name="_csrf" value="<%= csrfToken %>">
 		<input type="submit" value="ارسال" class="btn btn-primary">
-
 	</form>
+	<% } %>
 	<%- include('./includes/end.ejs') %>

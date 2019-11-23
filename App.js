@@ -104,5 +104,4 @@ mongoose
 // TODO: Forms ==> edit articles
 // TODO: User navbar
 // TODO: Images in articles
-// TODO: control comments of members or hosts
 // TODO: Select month in Articles view
