@@ -8,7 +8,8 @@ const Comment = new Schema({
   },
   date: {
     type: Date,
-    required: true
+    required: true,
+    default: Date.now()
   },
   userId: {
     type: Schema.Types.ObjectId,

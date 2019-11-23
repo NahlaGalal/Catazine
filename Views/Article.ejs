@@ -40,26 +40,18 @@
 
 			<%# Comments %>
 			<section class="comments">
-				<h2>Comments</h2>
-				<div>
-					<img src="/public/Images/user.png" alt="User comment">
-					<div class="comment">
-						<h3>Aya Ahmed</h3>
-						<p>15 Seotemper 2015, at 2:00 pm</p>
-						<p>رائع</p>
-						<a href="#">Reply</a>
+				<h2>التعليقات</h2>
+				<% comments.forEach((comment, i) => { %>
+					<div>
+						<img src="/<%= commentAuthors[i].imageUrl %>" alt="<%= commentAuthors[i].name %> comment">
+						<div class="comment">
+							<h3> <a href="/MemberArticles/<%= commentAuthors[i]._id %>"> <%= commentAuthors[i].name %> </a></h3>
+							<p><%= comment.date.toString().split(" ").slice(0, 5).join(" ") %></p>
+							<p><%= comment.comment %></p>
+						</div>
 					</div>
-				</div>
-				<hr>
-				<div>
-					<img src="/public/Images/user.png" alt="User comment">
-					<div class="comment">
-						<h3>Aya Ahmed</h3>
-						<p>15 Seotemper 2015, at 2:00 pm</p>
-						<p>رائع</p>
-						<a href="#">Reply</a>
-					</div>
-				</div>
+					<hr>
+				<% }) %>
 			</section>
 
 		</main>
@@ -86,14 +78,11 @@
 	</div>
 
 	<%# Leave Comment %>
-	<form class="container">
-		<h2>Leave a reply</h2>
-		<p>Your email address will not be published. Required fields are marked *</p>
-		<input type="text" name="Name" id="name" placeholder="Name*">
-		<input type="email" name="Mail" id="mail" placeholder="Email*">
-		<input type="text" name="Web" id="web" placeholder="Website">
-		<textarea name="Comment" id="comment" placeholder="Comment"></textarea>
-		<input type="submit" value="Submit" class="btn btn-primary">
+	<form class="container" action="/add-comment/<%= article._id %>" method="POST">
+		<h2>اترك تعليق</h2>
+		<textarea name="comment" id="comment" placeholder="تعليق"></textarea>
+		<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+		<input type="submit" value="ارسال" class="btn btn-primary">
 
 	</form>
 	<%- include('./includes/end.ejs') %>

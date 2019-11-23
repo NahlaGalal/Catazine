@@ -11,6 +11,8 @@ router.get("/Articles", articlesControllers.getArticles);
 
 router.get("/Article/:articleId", articlesControllers.getArticle);
 
+router.post("/add-comment/:articleId", articlesControllers.postAddComment);
+
 router.get("/add-article", isAuth, articlesControllers.getAddArticle);
 
 router.post("/add-article", isAuth, articlesControllers.postAddArticle);

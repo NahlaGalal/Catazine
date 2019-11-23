@@ -30,7 +30,8 @@ const Article = new Schema({
   },
   date: {
     type: Date,
-    required: true
+    required: true,
+    default: Date.now()
   },
   comments: {
     type: [Schema.Types.ObjectId],

@@ -2,6 +2,7 @@ const Article = require("../Models/articles");
 const User = require("../Models/Users");
 const Category = require("../Models/categories");
 const Tag = require("../Models/tags");
+const Comment = require("../Models/comment");
 
 const { categories, tags } = require("../util/categories_tags");
 
@@ -85,7 +86,11 @@ exports.getArticles = (req, res, next) => {
 
 exports.getArticle = (req, res, next) => {
   const { articleId } = req.params;
-  let userArticle, member;
+  let userArticle,
+    member,
+    userComments,
+    commentAuthors = [],
+    userIds;
   Article.findById(articleId)
     .then(article => {
       const arMonth = arMonthes[article.date.getMonth()];
@@ -96,6 +101,21 @@ exports.getArticle = (req, res, next) => {
     })
     .then(user => {
       member = user;
+      return Comment.find({ articleId: userArticle._id });
+    })
+    .then(comments => {
+      userComments = comments;
+      userIds = comments.map(comment => comment.userId);
+      return User.find({ _id: { $in: userIds } });
+    })
+    .then(users => {
+      userIds.forEach(userId => {
+        commentAuthors.push(
+          users.find(
+            user => user._id.toString().trim() === userId.toString().trim()
+          )
+        );
+      });
       return Category.find();
     })
     .then(allCategories => {
@@ -105,9 +125,12 @@ exports.getArticle = (req, res, next) => {
         article: userArticle,
         member,
         tags,
-        categories: allCategories
+        categories: allCategories,
+        comments: userComments,
+        commentAuthors
       });
-    });
+    })
+    .catch(err => console.log(err));
 };
 
 exports.getAddArticle = (req, res, next) => {
@@ -177,7 +200,10 @@ exports.getCategoryArticles = (req, res, next) => {
       res.render("Articles", {
         title: `${categoryName} category`,
         docType: "",
-        articles: articles.slice((page - 1) * MAX_ARTICLES, page * MAX_ARTICLES),
+        articles: articles.slice(
+          (page - 1) * MAX_ARTICLES,
+          page * MAX_ARTICLES
+        ),
         currentPage: page,
         lastPage: Math.ceil(numArticles / MAX_ARTICLES)
       });
@@ -199,10 +225,37 @@ exports.getTagArticles = (req, res, next) => {
       res.render("Articles", {
         title: `${tagName} tag`,
         docType: "",
-        articles: articles.slice((page - 1) * MAX_ARTICLES, page * MAX_ARTICLES),
+        articles: articles.slice(
+          (page - 1) * MAX_ARTICLES,
+          page * MAX_ARTICLES
+        ),
         currentPage: page,
         lastPage: Math.ceil(numArticles / MAX_ARTICLES)
       });
     })
+    .catch(err => console.log(err));
+};
+
+exports.postAddComment = (req, res, next) => {
+  const { articleId } = req.params;
+  console.log(req.session.user._id);
+  const newComment = new Comment({
+    comment: req.body.comment,
+    articleId,
+    userId: req.session.user._id
+  });
+  newComment
+    .save()
+    .then(comment =>
+      Article.findByIdAndUpdate(articleId, {
+        $push: { comments: comment._id }
+      })
+    )
+    .then(() =>
+      User.findByIdAndUpdate(req.session.user._id, {
+        $inc: { numComments: 1 }
+      })
+    )
+    .then(() => res.redirect(`/Article/${articleId}`))
     .catch(err => console.log(err));
 };
